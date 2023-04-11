@@ -22,7 +22,7 @@ If you use MassCCS in your research please, cite the following papers:
 ## Installation 
 
 Download the MassCCS or clone the repository on your computer:
-
+ 
 ```bash
 git clone https://github.com/cces-cepid/massccs.git
 ```
