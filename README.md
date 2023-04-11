@@ -58,7 +58,7 @@ There are optional compilation option that can be used, to see a list of all of 
 
 ```bash
 cd .. # need to execute massccs from root dir
-./build/massccs ./input.json
+srun -N2  --mpi=pmi2 singularity exec runtime_latest.sif ./build/bin/massccs input.json
 ```
 
 For more information about the software installation and used review the ["MassCCS doc"](https://massccs.readthedocs.io/en/latest/)
