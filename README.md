@@ -1,67 +1,68 @@
-# MassCSS: A high performance collision cross-section software for inter-node execution
+# MassCSS-OMPC: A high performance Collision Cross-Section software for Cluster execution
 
-Massive Collision Cross Section calculations for large macromolecular assemblies (MassCCS). MassCCS is an efficient parallel software for calculating Collision Cross Section (CCS) under the trajectory method (TM) for any macromolecular structure regardless of its size, shape and surface rugosity, without significant loss of accuracy or performance.
+MassCCS-OMPC is a extended version of ["MassCCS"](https://github.com/cces-cepid/massccs) to perform culations at the inter-node level using a novel programming model, called ["OpenMP Cluster (OMPC)"](https://ompcluster.gitlab.io/). OMPC is a task-parallel model that extends OpenMP for cluster programming, allowing applications to use the same programming model to exploit intra- and inter-node parallelism. That simplifies the development and software maintenance of HPC applications. 
 
-MassCCS relies on the linked-cell algorithm for computing intermolecular forces, ellipsoid projection approximation and efficient parallelization techniques that greatly enhance its performance in comparison to available TM CCS codes.
+This extension speedup even more the CCS calculations allowing expensive CCS calculations using nitrogen buffer for large systems such as human adenovirus with ~11 million atoms in just 4 min. 
 
-MassCCS is written in C++ and supports OpenMP. Extensive tests on calculation accuracy, speed up gains, and scalability with system size were performed. MassCCS efficiency is particularly scalable for multiple CPU cores.
+If you use MassCCS-OMPC in your research please, cite the following papers:
 
-If you use MassCCS in your research please, cite the following papers:
-
-["S. Cajahuaringa, D. L. Z. Caetano, L. N. Zanotto, G. Araujo and M. S. Skaf, MassCCS: A high performance collision cross-section software for large macromolecular assemblies, submitted"]()
-
-["S. Cajahuaringa, L. N. Zanotto, D. L. Z. Caetano, S. Rigo, H. Yviquel, M. S. Skaf and G. Araujo, Ion-Molecule Collision Cross-Section Simulation using Linked-cell and Trajectory Parallelization, 2022 IEEE 34th International Symposium on Computer Architecture and High Performance Computing (SBAC-PAD), Bordeaux, France, 2022, pp. 150-159."](https://ieeexplore.ieee.org/abstract/document/9980906)
+["S. Cajahuaringa, L. N. Zanotto,S. Rigo, H. Yviquel, M. S. Skaf and G. Araujo, Ion-Molecule Collision Cross-Section Calculations Using Trajectory Parallelization in Distributed Systems, submitted"]()
 
 ### The repository contents:
-[`src`](src): This directory contains massccs source codes.
-
-[`doc`](doc): This directory contains an updated user manual.
-
-[`data`](data): This directory contains information of data set of CCS calculations performed in this work.
+[`src`](src): This directory contains source codes.
 
 ## Installation 
 
-Download the MassCCS or clone the repository on your computer:
+Download the MassCCS-OMPC or clone the repository on your computer:
  
 ```bash
-git clone https://github.com/cces-cepid/massccs.git
+git clone https://github.com/cces-cepid/massccs-ompc.git
 ```
 ## Required Software
 
-MassCCS depends on the following software:
+MassCCS-OMPC depends on the following software:
 
-* C++9.3+
-* CMake 3.13+
+* Singularity
+* OpenMP Cluster container image 
+* MPI compiler
 
-On Ubuntu/Debian, you can simply run the following commands to install them with the package manager:
+On Ubuntu/Debian, you can simply run the following commands to dowlonad the last version of OMPC:
 ```bash
-sudo apt install gcc
-sudo apt-get install cmake
+sudo apt-get install singularity-container  
+singularity pull docker://ompcluster/runtime
 ```
 
 ## Installing
 
-This software uses CMake 3.13+ as its build system generator. On your terminal,
-run the following commands to compile the source code:
+On your terminal, run the following commands to compile the source code:
 
 ```bash
-cd massccs
-mkdir build # Create build directory
-cd build
-cmake .. # Generate Makefiles
-make  # Compile the program
+$ cd massccs-ompc
+$ singularity shell ./runtime_latest.sif # execute the OMPC container
+Singularity> mkdir build # Create build directory 
+Singularity> cd build
+Singularity> export CC=clang CXX=clang++ # export Clang compiler 
+Singularity> cmake .. # Generate Makefiles
+Singularity> make  # Compile the program to create the massccs-ompc executable
 ```
-
-There are optional compilation option that can be used, to see a list of all of them run `cmake -LH ..`.
 
 ## Run
 
+Finally, after compiled, the program can be launched using MPI's utility mpirun passing the number of processes as argument. Other flags of mpirun can be used normally (e.g. --hostfile).
+
+In this case is used 3 physical nodes but only 2 nodes are used as worker nodes
 ```bash
 cd .. # need to execute massccs from root dir
-srun -N2  --mpi=pmi2 singularity exec runtime_latest.sif ./build/bin/massccs input.json
+mpirun -np 3 singularity exec runtime_latest.sif ./build/bin/massccs-ompc input_Hellium.json > He_04_1ubq_charge_4e_min.log
 ```
+where the input file input_Hellium.json define only 2 tasks for 2 workes nodes, thats means one task for node.
 
-For more information about the software installation and used review the ["MassCCS doc"](https://massccs.readthedocs.io/en/latest/)
+ ```bash
+cd .. # need to execute massccs from root dir
+mpirun -np 3 singularity exec runtime_latest.sif ./build/bin/massccs-ompc input_Nitrogen.json > N2_04_1ubq_charge_4e_min.log
+```
+where the input file input_Nitrogen.json define 4 tasks for 2 workes nodes available, that is a dynamics task schedule.
+
 
 Author & Contact:
 --------------

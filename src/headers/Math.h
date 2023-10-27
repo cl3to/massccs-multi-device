@@ -1,21 +1,20 @@
 /*
  * This program is licensed granted by STATE UNIVERSITY OF CAMPINAS - UNICAMP ("University")
- * for use of MassCCS software ("the Software") through this website
- * https://github.com/cces-cepid/MassCCS (the "Website").
+ * for use of massccs-ompc software ("the Software") through this website
+ * https://github.com/cces-cepid/massccs-ompc (the "Website").
  *
  * By downloading the Software through the Website, you (the "License") are confirming that you agree
  * that your use of the Software is subject to the academic license terms.
  *
- * For more information about MassCCS please contact: 
+ * For more information about massccs-ompc please contact: 
  * skaf@unicamp.br (Munir S. Skaf)
  * guido@unicamp.br (Guido Araujo)
  * samuelcm@unicamp.br (Samuel Cajahuaringa)
- * danielzc@unicamp.br (Daniel L. Z. Caetano)
  * zanottol@unicamp.br (Leandro N. Zanotto)
  */
 
-#ifndef MASSCCS_V1_MATH_H
-#define MASSCCS_V1_MATH_H
+#ifndef MASSCCS_OMPC_V1_MATH_H
+#define MASSCCS_OMPC_V1_MATH_H
 
 #include <cmath>
 #include <exception>
@@ -154,5 +153,4 @@ T Math::distance(const std::vector<T> *v1, const std::vector<T> *v2) {
 
   return sqrt(res);
 }
-
-#endif // MASSCCS_V1_MATH_H
+#endif 

@@ -1,20 +1,21 @@
 /*
  * This program is licensed granted by STATE UNIVERSITY OF CAMPINAS - UNICAMP ("University")
- * for use of MassCCS software ("the Software") through this website
- * https://github.com/cces-cepid/massccs (the "Website").
+ * for use of massccs-ompc software ("the Software") through this website
+ * https://github.com/cces-cepid/massccs-ompc (the "Website").
  *
  * By downloading the Software through the Website, you (the "License") are confirming that you agree
  * that your use of the Software is subject to the academic license terms.
  *
- * For more information about MassCCS please contact: 
+ * For more information about massccs-ompc please contact: 
  * skaf@unicamp.br (Munir S. Skaf)
  * guido@unicamp.br (Guido Araujo)
  * samuelcm@unicamp.br (Samuel Cajahuaringa)
- * danielzc@unicamp.br (Daniel L. Z. Caetano)
  * zanottol@unicamp.br (Leandro N. Zanotto)
  */
 
 #include "headers/System.h"
+#include <cstdio>
+#include <unistd.h>
 
 System::System(char *inputFilename) {
 
@@ -88,7 +89,7 @@ if (gas_buffer_flag == 1) {
   }
 }
 
-	cout << "force_type: " << force_type << endl;
+cout << "force_type: " << force_type << endl;
 
 gas = new GasBuffer(gas_buffer_flag);
 
@@ -133,15 +134,12 @@ if (equipotential_flag == 1) {
 } else geometric_ellipsoid();
   
 double end_ellipsoid = omp_get_wtime();
-cout << "ellipsoid calculation time: " << (end_ellipsoid - start_ellipsoid) << "s" << endl;
+cout << "ellipsoid calculation time: " << (end_ellipsoid - start_ellipsoid) << " s" << endl;
 
 bmax = max(max(a,b),c); // maximal impact parameter
  
 cout << "maximal impact parameter: " << bmax << " Ang" << endl;
 
-// create the linked cell list
-//if (force_type % 2 == 0) {
-  // create the linked cell list
   double start_linked_cell = omp_get_wtime();
   linkedcell = new LinkedCell(moleculeTarget, a, b, c, lj_cutoff, skin, long_range_flag, long_range_cutoff, coul_cutoff);
   double end_linked_cell = omp_get_wtime();
@@ -154,30 +152,6 @@ cout << "maximal impact parameter: " << bmax << " Ang" << endl;
   Ny = linkedcell->Ny;
   Nz = linkedcell->Nz;
    
-  /*for (int i = 0; i < linkedcell->Ncells; i++) {
-    cout << "cell: " << i << endl;
-    cout << "first neighbors cells: " << linkedcell->neighbors1_cells[i] << endl;
-    for (int j = 0; j < linkedcell->neighbors1_cells[i]; j++) {
-      cout << "ids: " << linkedcell->neighbors1_cells_ids[i][j] << endl;
-    }
-    cout << "secodn neighbors cells: " << linkedcell->neighbors2_cells[i] << endl;
-    for (int j = 0; j < linkedcell->neighbors2_cells[i]; j++) {
-      cout << "ids: " << linkedcell->neighbors2_cells_ids[i][j] << endl;
-    }
-    cout << "atoms inside cells: " << linkedcell->atoms_inside_cell[i] << endl;
-    for (int j = 0; j < linkedcell->atoms_inside_cell[i]; j++) {
-      cout << "ids: " << linkedcell->atoms_ids[i][j] << endl;
-    }
-
-  }*/
-    
-//} else {
-  // simulation box length
-//  lx = a*1.02;
-//  ly = b*1.02;
-//  lz = c*1.02;
-//}
-
 // loop over iterations
 int Niter = nIter;
 int Ntraj = nProbe;
@@ -214,7 +188,6 @@ rnd_vec6 = new double [Niter * Ntraj]();
 rnd_vec7 = new double [Niter * Ntraj](); 
 rnd_vec8 = new double [Niter * Ntraj]();
 rnd_vec9 = new double [Niter * Ntraj](); 
-
 
 //#pragma omp simd
 for (int j = 0; j < Niter * Ntraj; j++) {
@@ -310,10 +283,11 @@ for (int i = 0; i < Ncells; i++) {
 }
 double end_start = omp_get_wtime();
 
-cout << "time info: " << end_start - info_start << endl;
+cout << "time info: " << end_start - info_start << " s" << endl;
 
 int nlocal[ntask];
 int nbegin[ntask];
+int nend[ntask];
 int Q = Niter*Ntraj/ntask; // cocient
 int r = (Niter*Ntraj)%ntask; // rest of division 
 
@@ -332,40 +306,48 @@ if (r == 0) {
 nbegin[0] = 0;
 for (int i = 1; i < ntask; i++) nbegin[i] = nbegin[i-1] + nlocal[i-1];
 
+for (int i = 0; i < ntask; i++) nend[i] = nbegin[i] + nlocal[i];  
+
 cout << "*********************************************************" << endl;
 cout << "Trajectory calculations " << endl;
 cout << "*********************************************************" << endl;
 
+double sstart = omp_get_wtime();
 
-#pragma omp parallel
-#pragma omp single
-{
-   for (int i = 0; i < ntask; i++) {
-     #pragma omp target nowait\
+double time_lcl_mol[ntask];
+double time_traj_task[ntask];
+double worker_id[ntask];
+
+int rr;        
+if (gas_buffer_flag == 1) {
+  // Hellium: He - atomic buffer gas
+  #pragma omp parallel
+  #pragma omp single
+  {
+    for (int i = 0; i < ntask; i++) {
+      #pragma omp target nowait \
       map(to: Ncells, N1, N2, Natoms, lj_cutoff, alpha, coul_cutoff, skin, lx, ly, lz, Nx, Ny, Nz, natoms, gas_buffer_flag, dt, bmax, mu, temperatureTarget, a, b, c, force_type) \
       map(to: n1_cells[:Ncells], n2_cells[:Ncells], atoms_cell[:Ncells]) \
       map(to: n1_cells_ids[:N1], n2_cells_ids[:N2], ids[:Natoms]) \
       map(to: x[:natoms], y[:natoms], z[:natoms], eps[:natoms], sig[:natoms], q[:natoms]) \
+      map(tofrom: time_lcl_mol[i:1], time_traj_task[i:1], worker_id[i:1]) \
       map(to: rnd_vec1[nbegin[i]:nlocal[i]], rnd_vec2[nbegin[i]:nlocal[i]], rnd_vec3[nbegin[i]:nlocal[i]]) \
       map(to: rnd_vec4[nbegin[i]:nlocal[i]], rnd_vec5[nbegin[i]:nlocal[i]], rnd_vec6[nbegin[i]:nlocal[i]]) \
       map(to: rnd_vec7[nbegin[i]:nlocal[i]], rnd_vec8[nbegin[i]:nlocal[i]], rnd_vec9[nbegin[i]:nlocal[i]]) \
       map(tofrom: dOmega_vec[nbegin[i]:nlocal[i]], Nscatter_vec[nbegin[i]:nlocal[i]], Nlost_vec[nbegin[i]:nlocal[i]], Nfree_vec[nbegin[i]:nlocal[i]]) \
-      depend(inout: dOmega_vec[nbegin[i]:nlocal[i]], Nscatter_vec[nbegin[i]:nlocal[i]], Nlost_vec[nbegin[i]:nlocal[i]], Nfree_vec[nbegin[i]:nlocal[i]])
-      {
+      depend(in: rr)
+      {  
         double i_start = omp_get_wtime();
-        
+        worker_id[i] = getpid();
         LCL *lcl; 
         lcl = new LCL(Ncells, n1_cells, n2_cells, atoms_cell, n1_cells_ids, n2_cells_ids, ids, lj_cutoff, skin, lx, ly, lz, Nx, Ny, Nz);
-        
         Mol *mol;
         mol = new Mol(natoms, x, y, z, eps, sig, q);
-   
         double f_start = omp_get_wtime();   
-
-        printf("target lcl and mol: %f\n", f_start - i_start);
-
+        time_lcl_mol[i] = f_start - i_start;
+        
         double traj_start = omp_get_wtime();
-   
+ 
         #pragma omp parallel for schedule(dynamic)
         for (int j = 0; j < nlocal[i]; j++) {
           int k = j + nbegin[i];
@@ -377,7 +359,7 @@ cout << "*********************************************************" << endl;
           gasProbe = new GasProbe(gas_buffer_flag);
            
           setup(gasProbe,hit,rnd_vec1[k],rnd_vec2[k],rnd_vec3[k],rnd_vec4[k],rnd_vec5[k],rnd_vec6[k],rnd_vec7[k],rnd_vec8[k],rnd_vec9[k]);
-
+ 
           if (hit) {
             run_He(gasProbe, success, chi, dt, force);
             if (success) {
@@ -392,16 +374,83 @@ cout << "*********************************************************" << endl;
           delete gasProbe;
           delete force;    
         }
-
+        
         double traj_end = omp_get_wtime();
-
-        printf("target traj: %f\n", traj_end - traj_start);
+        time_traj_task[i] = traj_end - traj_start;
  
         delete lcl;
         delete mol;      
       }
+    }
+  }
+} else if (gas_buffer_flag == 2) {
+  // Nitrogen: N2 - diatomic molecule buffer gas
+  #pragma omp parallel
+  #pragma omp single
+  {
+    for (int i = 0; i < ntask; i++) {
+      #pragma omp target nowait \
+      map(to: Ncells, N1, N2, Natoms, lj_cutoff, alpha, coul_cutoff, skin, lx, ly, lz, Nx, Ny, Nz, natoms, gas_buffer_flag, dt, bmax, mu, temperatureTarget, a, b, c, force_type, Inertia, d_bond) \
+      map(to: n1_cells[:Ncells], n2_cells[:Ncells], atoms_cell[:Ncells]) \
+      map(to: n1_cells_ids[:N1], n2_cells_ids[:N2], ids[:Natoms]) \
+      map(to: x[:natoms], y[:natoms], z[:natoms], eps[:natoms], sig[:natoms], q[:natoms]) \
+      map(tofrom: time_lcl_mol[i:1], time_traj_task[i:1], worker_id[i:1]) \
+      map(to: rnd_vec1[nbegin[i]:nlocal[i]], rnd_vec2[nbegin[i]:nlocal[i]], rnd_vec3[nbegin[i]:nlocal[i]]) \
+      map(to: rnd_vec4[nbegin[i]:nlocal[i]], rnd_vec5[nbegin[i]:nlocal[i]], rnd_vec6[nbegin[i]:nlocal[i]]) \
+      map(to: rnd_vec7[nbegin[i]:nlocal[i]], rnd_vec8[nbegin[i]:nlocal[i]], rnd_vec9[nbegin[i]:nlocal[i]]) \
+      map(tofrom: dOmega_vec[nbegin[i]:nlocal[i]], Nscatter_vec[nbegin[i]:nlocal[i]], Nlost_vec[nbegin[i]:nlocal[i]], Nfree_vec[nbegin[i]:nlocal[i]]) \
+      depend(in: rr)
+      {
+        double i_start = omp_get_wtime();
+        worker_id[i] = getpid();
+        LCL *lcl;
+        lcl = new LCL(Ncells, n1_cells, n2_cells, atoms_cell, n1_cells_ids, n2_cells_ids, ids, lj_cutoff, skin, lx, ly, lz, Nx, Ny, Nz);
+        Mol *mol;
+        mol = new Mol(natoms, x, y, z, eps, sig, q);
+        double f_start = omp_get_wtime();
+        time_lcl_mol[i] = f_start - i_start;
+        
+        double traj_start = omp_get_wtime();
+        #pragma omp parallel for schedule(dynamic)
+        for (int j = 0; j < nlocal[i]; j++) {
+          int k = j + nbegin[i];
+          bool hit, success;
+          double chi;
+          Force *force;
+          force = new Force(mol, lcl, lj_cutoff, alpha, coul_cutoff);
+          GasProbe *gasProbe;
+          gasProbe = new GasProbe(gas_buffer_flag);
+                
+          setup(gasProbe,hit,rnd_vec1[k],rnd_vec2[k],rnd_vec3[k],rnd_vec4[k],rnd_vec5[k],rnd_vec6[k],rnd_vec7[k],rnd_vec8[k],rnd_vec9[k]);
+        
+          if (hit) {
+            run_N2(gasProbe, success, chi, dt, force);
+            if (success) {
+              dOmega_vec[k] = M_PI * (1.0 - cos(chi)) * pow(bmax,2.0);
+              Nscatter_vec[k] = 1;
+            } else {
+              Nlost_vec[k] = 1;
+            }
+          } else {
+            Nfree_vec[k] = 1;
+          }
+          delete gasProbe;
+          delete force;
+        }
+
+        double traj_end = omp_get_wtime();
+        time_traj_task[i] = traj_end - traj_start;
+
+        delete lcl;
+        delete mol;
+      }
+    }
   }
 }
+
+double eend = omp_get_wtime();
+cout << "out target time: " << (eend - sstart) << " s" << endl;
+
 
 int count = 0;
 for (int i = 0; i < Niter; i++) {
@@ -424,6 +473,15 @@ for (int i = 0; i < Niter; i++) {
   printf("Nscatter: %i\n",Nscatter);
   printf("Nlost: %i\n",Nlost);
   printf("omega: %g\n",1.0/(float(Nscatter + Nfree))*dOmega);
+}
+
+cout << "*********************************************************" << endl;
+for (int i = 0; i < ntask; i++) {
+  cout << "task: " << i << endl;
+  cout << "worker id: " <<  worker_id[i] << endl;
+  cout << "time create lcl and mol: " << time_lcl_mol[i] << " s" << endl;
+  cout << "numbers of trajectories: " << nlocal[i] << endl;
+  cout << "time trajectory calculation: " << time_traj_task[i] << " s" << endl;    
 }
   
 double end_ccs = omp_get_wtime();
@@ -463,8 +521,7 @@ System::~System() {
   delete moleculeTarget;
   delete gas;
   if(equipotential_flag) delete equipotential;
-  //delete linkedcell;
-  if(force_type % 2 == 0) delete linkedcell;
+  delete linkedcell;
 }
 
 // Helium gas dynamics
@@ -963,6 +1020,7 @@ while (trajTries < maxTries && maxTries < 10) {
     f_gas[iatom][0] = f[0];
     f_gas[iatom][1] = f[1];
     f_gas[iatom][2] = f[2];
+    //    printf("force %f %f %f\n", f_gas[iatom][1],f_gas[iatom][1],f_gas[iatom][2]);
   } 
   
   // second-half verlet integration     
@@ -1407,15 +1465,6 @@ while (trajTries < maxTries && maxTries < 10) {
   
   stepcount++;
 
-  /*cout << (moleculeTarget->natoms + natoms) << endl;
-  cout << "collision: " << stepcount << endl;
-  for (int iatom = 0; iatom < moleculeTarget->natoms; iatom++) {
-   cout << moleculeTarget->atomName[iatom]  << "  " << moleculeTarget->x[iatom] << "  " << moleculeTarget->y[iatom] << "  " << moleculeTarget->z[iatom] << endl;
-  }
-  for (int iatom = 0; iatom < natoms; iatom++) {
-    cout << gasProbe->atomName[iatom] << "  " << x[iatom] << "  " << y[iatom] << "  " << z[iatom] << endl;
-  }*/
-
   if (dtheta > theta_max) {
     trajTries++;
     dt = time_step/(trajTries + 1);
@@ -1496,7 +1545,6 @@ rcm[0] = bi;
 rcm[1] = 0.0;
 rcm[2] = bmax;
 
-//printf("mu and T %f %f\n", mu, temperatureTarget);
 // define intial velocity of the molecule probe
 double vi;
 vi = velGenerator(mu, temperatureTarget, rndVal2); // velocity distribution
@@ -1512,16 +1560,12 @@ angles[0] = gamma;
 angles[1] = phi;
 angles[2] = theta;
 
-//printf("values %f %f %f %f %f %f\n", bi, bmax, vi, angles[0], angles[1], angles[2]);
-
 // rotate position and velocity of molecule probe
 rotate(rcm, vcm, angles);
 
 // hit the ellipsoid
 vector<double> ur(3), uv(3), cross(3);
 double delta, lambda, l1, l2;
-
-//printf("values %f %f %f\n", a,b,c);
 
 ur[0] = rcm[0]/a;
 ur[1] = rcm[1]/b;
@@ -1580,7 +1624,7 @@ if (gas_buffer_flag == 1) {
   wgas[2] = 0.0;  
    
   rotate_gas(wgas, theta, phi);
-  int natoms = gas->natoms;
+  int natoms = gasProbe->natoms;
   for (int i = 0; i < natoms; i++) {
     rgas[0] = gasProbe->x[i];
     rgas[1] = gasProbe->y[i];
@@ -1603,7 +1647,8 @@ if (gas_buffer_flag == 1) {
     gasProbe->vx[i] += vcm[0];
     gasProbe->vy[i] += vcm[1];
     gasProbe->vz[i] += vcm[2];
-  }     
+  }  
+     
 } 
 
 hit = true;

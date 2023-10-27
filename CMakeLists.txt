@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(massccs
-    VERSION         2.0
+project(massccs-ompc
+    VERSION         1.0
     DESCRIPTION     "massccs ompc version"
     LANGUAGES       C CXX)
 
@@ -15,7 +15,6 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 # Remove annoying warnings
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-return-type -Wno-absolute-value")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-return-type -Wno-absolute-value")
-
 
 # Ensure we are using OMPC Clang
 # ------------------------------------------------------------------------------
@@ -43,24 +42,6 @@ else()
         "    export CXX=clang++")
 endif()
 
-# add a target to generate API documentation with Doxygen
-find_package(Doxygen)
-option(BUILD_DOCUMENTATION "Create and install the HTML based API documentation (requires Doxygen)" ${DOXYGEN_FOUND})
-
-if(BUILD_DOCUMENTATION)
-  if(NOT DOXYGEN_FOUND)
-    message(FATAL_ERROR "Doxygen is needed to build the documentation.")
-  endif()
-
-  set(doxyfile ${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile)
-
-  add_custom_target(docs
-    COMMAND ${DOXYGEN_EXECUTABLE} ${doxyfile}
-    WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
-    COMMENT "Generating API documentation with Doxygen"
-    VERBATIM)
-endif()
-
 # Set a default build type if none was specified
 set(default_build_type "Release")
 
@@ -74,12 +55,13 @@ if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
 endif()
 
 # RelWithDebInfo use O3 by default to allow vectorization profiling
-option(RELWITHDEBINFO_FORCE_O3 "Force O3 with RelWithDebInfo" ON)
-if(RELWITHDEBINFO_FORCE_O3)
-  string(REPLACE "-O2" "-O3" CMAKE_C_FLAGS_RELWITHDEBINFO "${CMAKE_C_FLAGS_RELWITHDEBINFO}")
-  string(REPLACE "-O2" "-O3" CMAKE_CXX_FLAGS_RELWITHDEBINFO "${CMAKE_CXX_FLAGS_RELWITHDEBINFO}")
-endif()
+#option(RELWITHDEBINFO_FORCE_O3 "Force O3 with RelWithDebInfo" ON)
+#if(RELWITHDEBINFO_FORCE_O3)
+#  string(REPLACE "-O2" "-O3" CMAKE_C_FLAGS_RELWITHDEBINFO "${CMAKE_C_FLAGS_RELWITHDEBINFO}")
+#  string(REPLACE "-O2" "-O3" CMAKE_CXX_FLAGS_RELWITHDEBINFO "${CMAKE_CXX_FLAGS_RELWITHDEBINFO}")
+#endif()
 
+# RelWithDebInfo use O3 by default to allow vectorization profiling
 option(VERBOSE_VECTORIZE "Show vectorization report" OFF)
 if(VERBOSE_VECTORIZE)
   if("${CMAKE_C_COMPILER_ID}" STREQUAL "Clang")
