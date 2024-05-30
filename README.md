@@ -4,7 +4,7 @@ MassCCS-OMPC is a extended version of ["MassCCS"](https://github.com/cces-cepid/
 
 This extension speedup even more the CCS calculations allowing expensive CCS calculations using nitrogen buffer for large systems such as human adenovirus with ~11 million atoms in just 4 min. 
 
-If you use MassCCS-OMPC in your research please, cite the following papers:
+If you use MassCCS-OMPC in your research please, cite the following paper:
 
 ["S. Cajahuaringa, L. N. Zanotto,S. Rigo, H. Yviquel, M. S. Skaf and G. Araujo, Ion-Molecule Collision Cross-Section Calculations Using Trajectory Parallelization in Distributed Systems, J.
 Parallel Distr. Com. 191 (2024) 104902"](https://doi.org/10.1016/j.jpdc.2024.104902)
