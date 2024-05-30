@@ -1,0 +1,2230 @@
+*********************************************************
+INPUT:: Simulation Parameters 
+*********************************************************
+target filename                  : 7w17.xyz
+number of probe                  : 10000
+number of iterarions             : 10
+number of tasks                  : 18
+number of threads                : 24
+seed number                      : 2104
+gas buffer                       : N2
+Target Temperature (K)           : 298
+timestep (fs)                    : 10
+Skin cell size (Ang)             : 0.01
+Equipotential                    : no
+Cut short-range interaction      : yes
+LJ cutoff (Ang)                  : 12
+Apply long-range interaction     : yes
+Cut long-range interaction       : yes
+Coulomb cutoff (Ang)             : 25
+Apply induced-dipole interaction : yes
+alpha (Ang^3)                    : 1.71
+force_type: 6
+*********************************************************
+Force Field parameters: 
+*********************************************************
+Symbol  mass (amu)  epislon (kcal/mol)  sigma(Angstroms) 
+C   12.011   0.0824736   3.2255
+N   14.007   0.0758527   3.5719
+H   1.008   0.0362711   1.8986
+O   15.999   0.062323   3.075
+S   32.06   0.138032   3.4237
+P   30.9738   0.145372   3.47
+*********************************************************
+MOLECULE:: orientation around the inertia principal axis 
+*********************************************************
+Inertia matrix a.u. Ang^2: 
+{  6.63676e+10  1377.42  -497.502  }
+{  1377.42  6.63676e+10  1063.62  }
+{  -497.502  1063.62  6.63676e+10  }
+Rotation matrix applied to molecule: 
+{  0.999999  0.00114971  -0.000416152  }
+{  -0.00230802  0.999996  -0.00177314  }
+{  0.000414111  0.0017741  0.999998  }
+Molecule radius: 171.043 Ang 
+orientation time of molecule target: 3.20076 s
+target mass: 5.43303e+06 amu
+gas mass: 28.014 amu
+reduce mass: 28.014 amu
+charge state: -300 e
+*********************************************************
+Geometric Ellipsoid: 
+*********************************************************
+maximal distances: 162.188  160.956  171.043  Ang
+Initial axis length: 213.295  212.063  222.151  Ang
+Ellipsoid axis length: 221.755  220.523  230.611  Ang
+ellipsoid calculation time: 0.00465202 s
+maximal impact parameter: 230.611 Ang
+*********************************************************
+Linked-cell: 
+Numbers of cells: 53391
+Nx: 37 Ny: 37 Nz: 39
+Filled cells: 7300
+Empty cells: 46091
+Average atoms per cell: 102.986
+Maximum atoms per cell: 200
+Minimum atoms per cell: 1
+Simulation box: 
+lx: 444.37 Ang
+ly: 444.37 Ang
+lz: 468.39 Ang
+linked-cell calculation time: 0.14353 s
+time info: 0.020849 s
+*********************************************************
+Trajectory calculations 
+*********************************************************
+out target time: 233.778 s
+Ntraj: 10000
+Nfree: 565
+Nscatter: 9432
+Nlost: 3
+omega: 114411
+Ntraj: 10000
+Nfree: 496
+Nscatter: 9502
+Nlost: 2
+omega: 114891
+Ntraj: 10000
+Nfree: 538
+Nscatter: 9456
+Nlost: 6
+omega: 115981
+Ntraj: 10000
+Nfree: 536
+Nscatter: 9462
+Nlost: 2
+omega: 114574
+Ntraj: 10000
+Nfree: 580
+Nscatter: 9415
+Nlost: 5
+omega: 116661
+Ntraj: 10000
+Nfree: 538
+Nscatter: 9460
+Nlost: 2
+omega: 116174
+Ntraj: 10000
+Nfree: 525
+Nscatter: 9475
+Nlost: 0
+omega: 114064
+Ntraj: 10000
+Nfree: 568
+Nscatter: 9430
+Nlost: 2
+omega: 113326
+Ntraj: 10000
+Nfree: 535
+Nscatter: 9465
+Nlost: 0
+omega: 114425
+Ntraj: 10000
+Nfree: 518
+Nscatter: 9481
+Nlost: 1
+omega: 117691
+*********************************************************
+task: 0
+worker id: 96515
+time create lcl and mol: 0.0259101 s
+numbers of trajectories: 5556
+time trajectory calculation: 46.0771 s
+task: 1
+worker id: 21895
+time create lcl and mol: 0.0257559 s
+numbers of trajectories: 5556
+time trajectory calculation: 100.6 s
+task: 2
+worker id: 93533
+time create lcl and mol: 0.026669 s
+numbers of trajectories: 5556
+time trajectory calculation: 40.1345 s
+task: 3
+worker id: 34127
+time create lcl and mol: 0.0271719 s
+numbers of trajectories: 5556
+time trajectory calculation: 77.8024 s
+task: 4
+worker id: 59645
+time create lcl and mol: 0.0266552 s
+numbers of trajectories: 5556
+time trajectory calculation: 113.12 s
+task: 5
+worker id: 66602
+time create lcl and mol: 0.0271831 s
+numbers of trajectories: 5556
+time trajectory calculation: 34.3271 s
+task: 6
+worker id: 50175
+time create lcl and mol: 0.025456 s
+numbers of trajectories: 5556
+time trajectory calculation: 47.9097 s
+task: 7
+worker id: 43711
+time create lcl and mol: 0.026521 s
+numbers of trajectories: 5556
+time trajectory calculation: 125.879 s
+task: 8
+worker id: 66602
+time create lcl and mol: 0.0271611 s
+numbers of trajectories: 5556
+time trajectory calculation: 116.106 s
+task: 9
+worker id: 21895
+time create lcl and mol: 0.0249829 s
+numbers of trajectories: 5556
+time trajectory calculation: 93.217 s
+task: 10
+worker id: 50175
+time create lcl and mol: 0.0259728 s
+numbers of trajectories: 5555
+time trajectory calculation: 32.1958 s
+task: 11
+worker id: 50175
+time create lcl and mol: 0.0255489 s
+numbers of trajectories: 5555
+time trajectory calculation: 59.922 s
+task: 12
+worker id: 43711
+time create lcl and mol: 0.0275919 s
+numbers of trajectories: 5555
+time trajectory calculation: 68.0691 s
+task: 13
+worker id: 93533
+time create lcl and mol: 0.026099 s
+numbers of trajectories: 5555
+time trajectory calculation: 71.1866 s
+task: 14
+worker id: 96515
+time create lcl and mol: 0.0248971 s
+numbers of trajectories: 5555
+time trajectory calculation: 123.015 s
+task: 15
+worker id: 66602
+time create lcl and mol: 0.0273671 s
+numbers of trajectories: 5555
+time trajectory calculation: 33.4008 s
+task: 16
+worker id: 43711
+time create lcl and mol: 0.026808 s
+numbers of trajectories: 5555
+time trajectory calculation: 39.5566 s
+task: 17
+worker id: 34127
+time create lcl and mol: 0.0256262 s
+numbers of trajectories: 5555
+time trajectory calculation: 111.96 s
+CCS time: 233.812 s
+*********************************************************
+average value of CCS = 115220 Ang^2
+error value of CCS = 405.06 Ang^2
+Total time: 237.166 s
+Program finished...
+*********************************************************
+INPUT:: Simulation Parameters 
+*********************************************************
+target filename                  : 7w17.xyz
+number of probe                  : 10000
+number of iterarions             : 10
+number of tasks                  : 18
+number of threads                : 24
+seed number                      : 2104
+gas buffer                       : N2
+Target Temperature (K)           : 298
+timestep (fs)                    : 10
+Skin cell size (Ang)             : 0.01
+Equipotential                    : no
+Cut short-range interaction      : yes
+LJ cutoff (Ang)                  : 12
+Apply long-range interaction     : yes
+Cut long-range interaction       : yes
+Coulomb cutoff (Ang)             : 25
+Apply induced-dipole interaction : yes
+alpha (Ang^3)                    : 1.71
+force_type: 6
+*********************************************************
+Force Field parameters: 
+*********************************************************
+Symbol  mass (amu)  epislon (kcal/mol)  sigma(Angstroms) 
+C   12.011   0.0824736   3.2255
+N   14.007   0.0758527   3.5719
+H   1.008   0.0362711   1.8986
+O   15.999   0.062323   3.075
+S   32.06   0.138032   3.4237
+P   30.9738   0.145372   3.47
+*********************************************************
+MOLECULE:: orientation around the inertia principal axis 
+*********************************************************
+Inertia matrix a.u. Ang^2: 
+{  6.63676e+10  1377.42  -497.502  }
+{  1377.42  6.63676e+10  1063.62  }
+{  -497.502  1063.62  6.63676e+10  }
+Rotation matrix applied to molecule: 
+{  0.999999  0.00114971  -0.000416152  }
+{  -0.00230802  0.999996  -0.00177314  }
+{  0.000414111  0.0017741  0.999998  }
+Molecule radius: 171.043 Ang 
+orientation time of molecule target: 0.802396 s
+target mass: 5.43303e+06 amu
+gas mass: 28.014 amu
+reduce mass: 28.014 amu
+charge state: -300 e
+*********************************************************
+Geometric Ellipsoid: 
+*********************************************************
+maximal distances: 162.188  160.956  171.043  Ang
+Initial axis length: 213.295  212.063  222.151  Ang
+Ellipsoid axis length: 221.755  220.523  230.611  Ang
+ellipsoid calculation time: 0.00465608 s
+maximal impact parameter: 230.611 Ang
+*********************************************************
+Linked-cell: 
+Numbers of cells: 53391
+Nx: 37 Ny: 37 Nz: 39
+Filled cells: 7300
+Empty cells: 46091
+Average atoms per cell: 102.986
+Maximum atoms per cell: 200
+Minimum atoms per cell: 1
+Simulation box: 
+lx: 444.37 Ang
+ly: 444.37 Ang
+lz: 468.39 Ang
+linked-cell calculation time: 0.134528 s
+time info: 0.0180938 s
+*********************************************************
+Trajectory calculations 
+*********************************************************
+out target time: 196.465 s
+Ntraj: 10000
+Nfree: 565
+Nscatter: 9432
+Nlost: 3
+omega: 114411
+Ntraj: 10000
+Nfree: 496
+Nscatter: 9502
+Nlost: 2
+omega: 114891
+Ntraj: 10000
+Nfree: 538
+Nscatter: 9456
+Nlost: 6
+omega: 115981
+Ntraj: 10000
+Nfree: 536
+Nscatter: 9462
+Nlost: 2
+omega: 114574
+Ntraj: 10000
+Nfree: 580
+Nscatter: 9415
+Nlost: 5
+omega: 116661
+Ntraj: 10000
+Nfree: 538
+Nscatter: 9460
+Nlost: 2
+omega: 116174
+Ntraj: 10000
+Nfree: 525
+Nscatter: 9475
+Nlost: 0
+omega: 114064
+Ntraj: 10000
+Nfree: 568
+Nscatter: 9430
+Nlost: 2
+omega: 113326
+Ntraj: 10000
+Nfree: 535
+Nscatter: 9465
+Nlost: 0
+omega: 114425
+Ntraj: 10000
+Nfree: 518
+Nscatter: 9481
+Nlost: 1
+omega: 117691
+*********************************************************
+task: 0
+worker id: 67386
+time create lcl and mol: 0.0257339 s
+numbers of trajectories: 5556
+time trajectory calculation: 46.4557 s
+task: 1
+worker id: 41831
+time create lcl and mol: 0.025763 s
+numbers of trajectories: 5556
+time trajectory calculation: 101.592 s
+task: 2
+worker id: 74299
+time create lcl and mol: 0.0258601 s
+numbers of trajectories: 5556
+time trajectory calculation: 40.3772 s
+task: 3
+worker id: 29596
+time create lcl and mol: 0.026432 s
+numbers of trajectories: 5556
+time trajectory calculation: 78.4774 s
+task: 4
+worker id: 3680
+time create lcl and mol: 0.0256371 s
+numbers of trajectories: 5556
+time trajectory calculation: 112.759 s
+task: 5
+worker id: 57879
+time create lcl and mol: 0.02547 s
+numbers of trajectories: 5556
+time trajectory calculation: 34.794 s
+task: 6
+worker id: 29596
+time create lcl and mol: 0.026788 s
+numbers of trajectories: 5556
+time trajectory calculation: 48.2103 s
+task: 7
+worker id: 67386
+time create lcl and mol: 0.0270309 s
+numbers of trajectories: 5556
+time trajectory calculation: 126.427 s
+task: 8
+worker id: 74299
+time create lcl and mol: 0.026952 s
+numbers of trajectories: 5556
+time trajectory calculation: 117.433 s
+task: 9
+worker id: 41831
+time create lcl and mol: 0.02635 s
+numbers of trajectories: 5556
+time trajectory calculation: 94.6711 s
+task: 10
+worker id: 6660
+time create lcl and mol: 0.025465 s
+numbers of trajectories: 5555
+time trajectory calculation: 32.0984 s
+task: 11
+worker id: 6660
+time create lcl and mol: 0.0269101 s
+numbers of trajectories: 5555
+time trajectory calculation: 59.3649 s
+task: 12
+worker id: 51407
+time create lcl and mol: 0.026907 s
+numbers of trajectories: 5555
+time trajectory calculation: 67.5435 s
+task: 13
+worker id: 3680
+time create lcl and mol: 0.0273879 s
+numbers of trajectories: 5555
+time trajectory calculation: 70.459 s
+task: 14
+worker id: 51407
+time create lcl and mol: 0.0259771 s
+numbers of trajectories: 5555
+time trajectory calculation: 119.8 s
+task: 15
+worker id: 29596
+time create lcl and mol: 0.026772 s
+numbers of trajectories: 5555
+time trajectory calculation: 32.6913 s
+task: 16
+worker id: 6660
+time create lcl and mol: 0.02684 s
+numbers of trajectories: 5555
+time trajectory calculation: 39.4221 s
+task: 17
+worker id: 57879
+time create lcl and mol: 0.0259371 s
+numbers of trajectories: 5555
+time trajectory calculation: 110.001 s
+CCS time: 196.493 s
+*********************************************************
+average value of CCS = 115220 Ang^2
+error value of CCS = 405.06 Ang^2
+Total time: 197.44 s
+Program finished...
+*********************************************************
+INPUT:: Simulation Parameters 
+*********************************************************
+target filename                  : 7w17.xyz
+number of probe                  : 10000
+number of iterarions             : 10
+number of tasks                  : 18
+number of threads                : 24
+seed number                      : 2104
+gas buffer                       : N2
+Target Temperature (K)           : 298
+timestep (fs)                    : 10
+Skin cell size (Ang)             : 0.01
+Equipotential                    : no
+Cut short-range interaction      : yes
+LJ cutoff (Ang)                  : 12
+Apply long-range interaction     : yes
+Cut long-range interaction       : yes
+Coulomb cutoff (Ang)             : 25
+Apply induced-dipole interaction : yes
+alpha (Ang^3)                    : 1.71
+force_type: 6
+*********************************************************
+Force Field parameters: 
+*********************************************************
+Symbol  mass (amu)  epislon (kcal/mol)  sigma(Angstroms) 
+C   12.011   0.0824736   3.2255
+N   14.007   0.0758527   3.5719
+H   1.008   0.0362711   1.8986
+O   15.999   0.062323   3.075
+S   32.06   0.138032   3.4237
+P   30.9738   0.145372   3.47
+*********************************************************
+MOLECULE:: orientation around the inertia principal axis 
+*********************************************************
+Inertia matrix a.u. Ang^2: 
+{  6.63676e+10  1377.42  -497.502  }
+{  1377.42  6.63676e+10  1063.62  }
+{  -497.502  1063.62  6.63676e+10  }
+Rotation matrix applied to molecule: 
+{  0.999999  0.00114971  -0.000416152  }
+{  -0.00230802  0.999996  -0.00177314  }
+{  0.000414111  0.0017741  0.999998  }
+Molecule radius: 171.043 Ang 
+orientation time of molecule target: 0.800957 s
+target mass: 5.43303e+06 amu
+gas mass: 28.014 amu
+reduce mass: 28.014 amu
+charge state: -300 e
+*********************************************************
+Geometric Ellipsoid: 
+*********************************************************
+maximal distances: 162.188  160.956  171.043  Ang
+Initial axis length: 213.295  212.063  222.151  Ang
+Ellipsoid axis length: 221.755  220.523  230.611  Ang
+ellipsoid calculation time: 0.00459719 s
+maximal impact parameter: 230.611 Ang
+*********************************************************
+Linked-cell: 
+Numbers of cells: 53391
+Nx: 37 Ny: 37 Nz: 39
+Filled cells: 7300
+Empty cells: 46091
+Average atoms per cell: 102.986
+Maximum atoms per cell: 200
+Minimum atoms per cell: 1
+Simulation box: 
+lx: 444.37 Ang
+ly: 444.37 Ang
+lz: 468.39 Ang
+linked-cell calculation time: 0.134023 s
+time info: 0.0187528 s
+*********************************************************
+Trajectory calculations 
+*********************************************************
+out target time: 230.735 s
+Ntraj: 10000
+Nfree: 565
+Nscatter: 9432
+Nlost: 3
+omega: 114411
+Ntraj: 10000
+Nfree: 496
+Nscatter: 9502
+Nlost: 2
+omega: 114891
+Ntraj: 10000
+Nfree: 538
+Nscatter: 9456
+Nlost: 6
+omega: 115981
+Ntraj: 10000
+Nfree: 536
+Nscatter: 9462
+Nlost: 2
+omega: 114574
+Ntraj: 10000
+Nfree: 580
+Nscatter: 9415
+Nlost: 5
+omega: 116661
+Ntraj: 10000
+Nfree: 538
+Nscatter: 9460
+Nlost: 2
+omega: 116174
+Ntraj: 10000
+Nfree: 525
+Nscatter: 9475
+Nlost: 0
+omega: 114064
+Ntraj: 10000
+Nfree: 568
+Nscatter: 9430
+Nlost: 2
+omega: 113326
+Ntraj: 10000
+Nfree: 535
+Nscatter: 9465
+Nlost: 0
+omega: 114425
+Ntraj: 10000
+Nfree: 518
+Nscatter: 9481
+Nlost: 1
+omega: 117691
+*********************************************************
+task: 0
+worker id: 10139
+time create lcl and mol: 0.026264 s
+numbers of trajectories: 5556
+time trajectory calculation: 46.9824 s
+task: 1
+worker id: 36037
+time create lcl and mol: 0.025759 s
+numbers of trajectories: 5556
+time trajectory calculation: 101.853 s
+task: 2
+worker id: 57857
+time create lcl and mol: 0.0259211 s
+numbers of trajectories: 5556
+time trajectory calculation: 40.2541 s
+task: 3
+worker id: 73828
+time create lcl and mol: 0.027693 s
+numbers of trajectories: 5556
+time trajectory calculation: 77.8188 s
+task: 4
+worker id: 48282
+time create lcl and mol: 0.025722 s
+numbers of trajectories: 5556
+time trajectory calculation: 112.975 s
+task: 5
+worker id: 80740
+time create lcl and mol: 0.0259469 s
+numbers of trajectories: 5556
+time trajectory calculation: 34.0214 s
+task: 6
+worker id: 13111
+time create lcl and mol: 0.0259759 s
+numbers of trajectories: 5556
+time trajectory calculation: 47.6396 s
+task: 7
+worker id: 64316
+time create lcl and mol: 0.0261581 s
+numbers of trajectories: 5556
+time trajectory calculation: 124.385 s
+task: 8
+worker id: 13111
+time create lcl and mol: 0.0260172 s
+numbers of trajectories: 5556
+time trajectory calculation: 117.735 s
+task: 9
+worker id: 73828
+time create lcl and mol: 0.024986 s
+numbers of trajectories: 5556
+time trajectory calculation: 91.8623 s
+task: 10
+worker id: 13111
+time create lcl and mol: 0.027081 s
+numbers of trajectories: 5555
+time trajectory calculation: 31.7506 s
+task: 11
+worker id: 36037
+time create lcl and mol: 0.0253201 s
+numbers of trajectories: 5555
+time trajectory calculation: 59.3332 s
+task: 12
+worker id: 80740
+time create lcl and mol: 0.0277848 s
+numbers of trajectories: 5555
+time trajectory calculation: 67.563 s
+task: 13
+worker id: 80740
+time create lcl and mol: 0.0259161 s
+numbers of trajectories: 5555
+time trajectory calculation: 69.8304 s
+task: 14
+worker id: 10139
+time create lcl and mol: 0.024534 s
+numbers of trajectories: 5555
+time trajectory calculation: 124.583 s
+task: 15
+worker id: 13111
+time create lcl and mol: 0.0253451 s
+numbers of trajectories: 5555
+time trajectory calculation: 33.3125 s
+task: 16
+worker id: 57857
+time create lcl and mol: 0.0263669 s
+numbers of trajectories: 5555
+time trajectory calculation: 40.3824 s
+task: 17
+worker id: 57857
+time create lcl and mol: 0.026906 s
+numbers of trajectories: 5555
+time trajectory calculation: 111.375 s
+CCS time: 230.764 s
+*********************************************************
+average value of CCS = 115220 Ang^2
+error value of CCS = 405.06 Ang^2
+Total time: 231.708 s
+Program finished...
+*********************************************************
+INPUT:: Simulation Parameters 
+*********************************************************
+target filename                  : 7w17.xyz
+number of probe                  : 10000
+number of iterarions             : 10
+number of tasks                  : 18
+number of threads                : 24
+seed number                      : 2104
+gas buffer                       : N2
+Target Temperature (K)           : 298
+timestep (fs)                    : 10
+Skin cell size (Ang)             : 0.01
+Equipotential                    : no
+Cut short-range interaction      : yes
+LJ cutoff (Ang)                  : 12
+Apply long-range interaction     : yes
+Cut long-range interaction       : yes
+Coulomb cutoff (Ang)             : 25
+Apply induced-dipole interaction : yes
+alpha (Ang^3)                    : 1.71
+force_type: 6
+*********************************************************
+Force Field parameters: 
+*********************************************************
+Symbol  mass (amu)  epislon (kcal/mol)  sigma(Angstroms) 
+C   12.011   0.0824736   3.2255
+N   14.007   0.0758527   3.5719
+H   1.008   0.0362711   1.8986
+O   15.999   0.062323   3.075
+S   32.06   0.138032   3.4237
+P   30.9738   0.145372   3.47
+*********************************************************
+MOLECULE:: orientation around the inertia principal axis 
+*********************************************************
+Inertia matrix a.u. Ang^2: 
+{  6.63676e+10  1377.42  -497.502  }
+{  1377.42  6.63676e+10  1063.62  }
+{  -497.502  1063.62  6.63676e+10  }
+Rotation matrix applied to molecule: 
+{  0.999999  0.00114971  -0.000416152  }
+{  -0.00230802  0.999996  -0.00177314  }
+{  0.000414111  0.0017741  0.999998  }
+Molecule radius: 171.043 Ang 
+orientation time of molecule target: 0.800497 s
+target mass: 5.43303e+06 amu
+gas mass: 28.014 amu
+reduce mass: 28.014 amu
+charge state: -300 e
+*********************************************************
+Geometric Ellipsoid: 
+*********************************************************
+maximal distances: 162.188  160.956  171.043  Ang
+Initial axis length: 213.295  212.063  222.151  Ang
+Ellipsoid axis length: 221.755  220.523  230.611  Ang
+ellipsoid calculation time: 0.00464702 s
+maximal impact parameter: 230.611 Ang
+*********************************************************
+Linked-cell: 
+Numbers of cells: 53391
+Nx: 37 Ny: 37 Nz: 39
+Filled cells: 7300
+Empty cells: 46091
+Average atoms per cell: 102.986
+Maximum atoms per cell: 200
+Minimum atoms per cell: 1
+Simulation box: 
+lx: 444.37 Ang
+ly: 444.37 Ang
+lz: 468.39 Ang
+linked-cell calculation time: 0.133055 s
+time info: 0.0175681 s
+*********************************************************
+Trajectory calculations 
+*********************************************************
+out target time: 241.414 s
+Ntraj: 10000
+Nfree: 565
+Nscatter: 9432
+Nlost: 3
+omega: 114411
+Ntraj: 10000
+Nfree: 496
+Nscatter: 9502
+Nlost: 2
+omega: 114891
+Ntraj: 10000
+Nfree: 538
+Nscatter: 9456
+Nlost: 6
+omega: 115981
+Ntraj: 10000
+Nfree: 536
+Nscatter: 9462
+Nlost: 2
+omega: 114574
+Ntraj: 10000
+Nfree: 580
+Nscatter: 9415
+Nlost: 5
+omega: 116661
+Ntraj: 10000
+Nfree: 538
+Nscatter: 9460
+Nlost: 2
+omega: 116174
+Ntraj: 10000
+Nfree: 525
+Nscatter: 9475
+Nlost: 0
+omega: 114064
+Ntraj: 10000
+Nfree: 568
+Nscatter: 9430
+Nlost: 2
+omega: 113326
+Ntraj: 10000
+Nfree: 535
+Nscatter: 9465
+Nlost: 0
+omega: 114425
+Ntraj: 10000
+Nfree: 518
+Nscatter: 9481
+Nlost: 1
+omega: 117691
+*********************************************************
+task: 0
+worker id: 81219
+time create lcl and mol: 0.0266941 s
+numbers of trajectories: 5556
+time trajectory calculation: 48.8322 s
+task: 1
+worker id: 81219
+time create lcl and mol: 0.026727 s
+numbers of trajectories: 5556
+time trajectory calculation: 104.941 s
+task: 2
+worker id: 81219
+time create lcl and mol: 0.0257239 s
+numbers of trajectories: 5556
+time trajectory calculation: 40.2566 s
+task: 3
+worker id: 55672
+time create lcl and mol: 0.0258021 s
+numbers of trajectories: 5556
+time trajectory calculation: 77.6582 s
+task: 4
+worker id: 17534
+time create lcl and mol: 0.027364 s
+numbers of trajectories: 5556
+time trajectory calculation: 114.033 s
+task: 5
+worker id: 20499
+time create lcl and mol: 0.026062 s
+numbers of trajectories: 5556
+time trajectory calculation: 34.5168 s
+task: 6
+worker id: 43430
+time create lcl and mol: 0.0259168 s
+numbers of trajectories: 5556
+time trajectory calculation: 48.2976 s
+task: 7
+worker id: 71705
+time create lcl and mol: 0.0253229 s
+numbers of trajectories: 5556
+time trajectory calculation: 126.445 s
+task: 8
+worker id: 71705
+time create lcl and mol: 0.0270338 s
+numbers of trajectories: 5556
+time trajectory calculation: 114.777 s
+task: 9
+worker id: 88130
+time create lcl and mol: 0.025533 s
+numbers of trajectories: 5556
+time trajectory calculation: 94.6743 s
+task: 10
+worker id: 65230
+time create lcl and mol: 0.0312569 s
+numbers of trajectories: 5555
+time trajectory calculation: 31.6948 s
+task: 11
+worker id: 55672
+time create lcl and mol: 0.0259309 s
+numbers of trajectories: 5555
+time trajectory calculation: 59.1685 s
+task: 12
+worker id: 17534
+time create lcl and mol: 0.0245819 s
+numbers of trajectories: 5555
+time trajectory calculation: 68.6092 s
+task: 13
+worker id: 43430
+time create lcl and mol: 0.0261939 s
+numbers of trajectories: 5555
+time trajectory calculation: 71.125 s
+task: 14
+worker id: 20499
+time create lcl and mol: 0.0269539 s
+numbers of trajectories: 5555
+time trajectory calculation: 122.337 s
+task: 15
+worker id: 65230
+time create lcl and mol: 0.0259199 s
+numbers of trajectories: 5555
+time trajectory calculation: 32.673 s
+task: 16
+worker id: 88130
+time create lcl and mol: 0.02683 s
+numbers of trajectories: 5555
+time trajectory calculation: 39.4592 s
+task: 17
+worker id: 65230
+time create lcl and mol: 0.0261328 s
+numbers of trajectories: 5555
+time trajectory calculation: 112.513 s
+CCS time: 241.442 s
+*********************************************************
+average value of CCS = 115220 Ang^2
+error value of CCS = 405.06 Ang^2
+Total time: 242.385 s
+Program finished...
+*********************************************************
+INPUT:: Simulation Parameters 
+*********************************************************
+target filename                  : 7w17.xyz
+number of probe                  : 10000
+number of iterarions             : 10
+number of tasks                  : 18
+number of threads                : 24
+seed number                      : 2104
+gas buffer                       : N2
+Target Temperature (K)           : 298
+timestep (fs)                    : 10
+Skin cell size (Ang)             : 0.01
+Equipotential                    : no
+Cut short-range interaction      : yes
+LJ cutoff (Ang)                  : 12
+Apply long-range interaction     : yes
+Cut long-range interaction       : yes
+Coulomb cutoff (Ang)             : 25
+Apply induced-dipole interaction : yes
+alpha (Ang^3)                    : 1.71
+force_type: 6
+*********************************************************
+Force Field parameters: 
+*********************************************************
+Symbol  mass (amu)  epislon (kcal/mol)  sigma(Angstroms) 
+C   12.011   0.0824736   3.2255
+N   14.007   0.0758527   3.5719
+H   1.008   0.0362711   1.8986
+O   15.999   0.062323   3.075
+S   32.06   0.138032   3.4237
+P   30.9738   0.145372   3.47
+*********************************************************
+MOLECULE:: orientation around the inertia principal axis 
+*********************************************************
+Inertia matrix a.u. Ang^2: 
+{  6.63676e+10  1377.42  -497.502  }
+{  1377.42  6.63676e+10  1063.62  }
+{  -497.502  1063.62  6.63676e+10  }
+Rotation matrix applied to molecule: 
+{  0.999999  0.00114971  -0.000416152  }
+{  -0.00230802  0.999996  -0.00177314  }
+{  0.000414111  0.0017741  0.999998  }
+Molecule radius: 171.043 Ang 
+orientation time of molecule target: 0.831021 s
+target mass: 5.43303e+06 amu
+gas mass: 28.014 amu
+reduce mass: 28.014 amu
+charge state: -300 e
+*********************************************************
+Geometric Ellipsoid: 
+*********************************************************
+maximal distances: 162.188  160.956  171.043  Ang
+Initial axis length: 213.295  212.063  222.151  Ang
+Ellipsoid axis length: 221.755  220.523  230.611  Ang
+ellipsoid calculation time: 0.00464797 s
+maximal impact parameter: 230.611 Ang
+*********************************************************
+Linked-cell: 
+Numbers of cells: 53391
+Nx: 37 Ny: 37 Nz: 39
+Filled cells: 7300
+Empty cells: 46091
+Average atoms per cell: 102.986
+Maximum atoms per cell: 200
+Minimum atoms per cell: 1
+Simulation box: 
+lx: 444.37 Ang
+ly: 444.37 Ang
+lz: 468.39 Ang
+linked-cell calculation time: 0.133531 s
+time info: 0.0174701 s
+*********************************************************
+Trajectory calculations 
+*********************************************************
+out target time: 229.494 s
+Ntraj: 10000
+Nfree: 565
+Nscatter: 9432
+Nlost: 3
+omega: 114411
+Ntraj: 10000
+Nfree: 496
+Nscatter: 9502
+Nlost: 2
+omega: 114891
+Ntraj: 10000
+Nfree: 538
+Nscatter: 9456
+Nlost: 6
+omega: 115981
+Ntraj: 10000
+Nfree: 536
+Nscatter: 9462
+Nlost: 2
+omega: 114574
+Ntraj: 10000
+Nfree: 580
+Nscatter: 9415
+Nlost: 5
+omega: 116661
+Ntraj: 10000
+Nfree: 538
+Nscatter: 9460
+Nlost: 2
+omega: 116174
+Ntraj: 10000
+Nfree: 525
+Nscatter: 9475
+Nlost: 0
+omega: 114064
+Ntraj: 10000
+Nfree: 568
+Nscatter: 9430
+Nlost: 2
+omega: 113326
+Ntraj: 10000
+Nfree: 535
+Nscatter: 9465
+Nlost: 0
+omega: 114425
+Ntraj: 10000
+Nfree: 518
+Nscatter: 9481
+Nlost: 1
+omega: 117691
+*********************************************************
+task: 0
+worker id: 25273
+time create lcl and mol: 0.0268209 s
+numbers of trajectories: 5556
+time trajectory calculation: 47.4684 s
+task: 1
+worker id: 72960
+time create lcl and mol: 0.025209 s
+numbers of trajectories: 5556
+time trajectory calculation: 101.425 s
+task: 2
+worker id: 51157
+time create lcl and mol: 0.027143 s
+numbers of trajectories: 5556
+time trajectory calculation: 40.2065 s
+task: 3
+worker id: 95862
+time create lcl and mol: 0.0243721 s
+numbers of trajectories: 5556
+time trajectory calculation: 77.3383 s
+task: 4
+worker id: 63427
+time create lcl and mol: 0.0260079 s
+numbers of trajectories: 5556
+time trajectory calculation: 112.471 s
+task: 5
+worker id: 88957
+time create lcl and mol: 0.0262842 s
+numbers of trajectories: 5556
+time trajectory calculation: 34.4785 s
+task: 6
+worker id: 28233
+time create lcl and mol: 0.0249372 s
+numbers of trajectories: 5556
+time trajectory calculation: 47.9712 s
+task: 7
+worker id: 79431
+time create lcl and mol: 0.0269248 s
+numbers of trajectories: 5556
+time trajectory calculation: 123.98 s
+task: 8
+worker id: 63427
+time create lcl and mol: 0.02491 s
+numbers of trajectories: 5556
+time trajectory calculation: 116.845 s
+task: 9
+worker id: 95862
+time create lcl and mol: 0.0260129 s
+numbers of trajectories: 5556
+time trajectory calculation: 94.9734 s
+task: 10
+worker id: 28233
+time create lcl and mol: 0.02525 s
+numbers of trajectories: 5555
+time trajectory calculation: 31.8787 s
+task: 11
+worker id: 51157
+time create lcl and mol: 0.0264349 s
+numbers of trajectories: 5555
+time trajectory calculation: 59.4617 s
+task: 12
+worker id: 51157
+time create lcl and mol: 0.0250032 s
+numbers of trajectories: 5555
+time trajectory calculation: 68.5084 s
+task: 13
+worker id: 72960
+time create lcl and mol: 0.0252171 s
+numbers of trajectories: 5555
+time trajectory calculation: 70.3496 s
+task: 14
+worker id: 25273
+time create lcl and mol: 0.026185 s
+numbers of trajectories: 5555
+time trajectory calculation: 124.871 s
+task: 15
+worker id: 88957
+time create lcl and mol: 0.0267451 s
+numbers of trajectories: 5555
+time trajectory calculation: 33.1904 s
+task: 16
+worker id: 28233
+time create lcl and mol: 0.026377 s
+numbers of trajectories: 5555
+time trajectory calculation: 39.957 s
+task: 17
+worker id: 88957
+time create lcl and mol: 0.0277309 s
+numbers of trajectories: 5555
+time trajectory calculation: 112.454 s
+CCS time: 229.521 s
+*********************************************************
+average value of CCS = 115220 Ang^2
+error value of CCS = 405.06 Ang^2
+Total time: 230.496 s
+Program finished...
+*********************************************************
+INPUT:: Simulation Parameters 
+*********************************************************
+target filename                  : 7w17.xyz
+number of probe                  : 10000
+number of iterarions             : 10
+number of tasks                  : 18
+number of threads                : 24
+seed number                      : 2104
+gas buffer                       : N2
+Target Temperature (K)           : 298
+timestep (fs)                    : 10
+Skin cell size (Ang)             : 0.01
+Equipotential                    : no
+Cut short-range interaction      : yes
+LJ cutoff (Ang)                  : 12
+Apply long-range interaction     : yes
+Cut long-range interaction       : yes
+Coulomb cutoff (Ang)             : 25
+Apply induced-dipole interaction : yes
+alpha (Ang^3)                    : 1.71
+force_type: 6
+*********************************************************
+Force Field parameters: 
+*********************************************************
+Symbol  mass (amu)  epislon (kcal/mol)  sigma(Angstroms) 
+C   12.011   0.0824736   3.2255
+N   14.007   0.0758527   3.5719
+H   1.008   0.0362711   1.8986
+O   15.999   0.062323   3.075
+S   32.06   0.138032   3.4237
+P   30.9738   0.145372   3.47
+*********************************************************
+MOLECULE:: orientation around the inertia principal axis 
+*********************************************************
+Inertia matrix a.u. Ang^2: 
+{  6.63676e+10  1377.42  -497.502  }
+{  1377.42  6.63676e+10  1063.62  }
+{  -497.502  1063.62  6.63676e+10  }
+Rotation matrix applied to molecule: 
+{  0.999999  0.00114971  -0.000416152  }
+{  -0.00230802  0.999996  -0.00177314  }
+{  0.000414111  0.0017741  0.999998  }
+Molecule radius: 171.043 Ang 
+orientation time of molecule target: 3.12592 s
+target mass: 5.43303e+06 amu
+gas mass: 28.014 amu
+reduce mass: 28.014 amu
+charge state: -300 e
+*********************************************************
+Geometric Ellipsoid: 
+*********************************************************
+maximal distances: 162.188  160.956  171.043  Ang
+Initial axis length: 213.295  212.063  222.151  Ang
+Ellipsoid axis length: 221.755  220.523  230.611  Ang
+ellipsoid calculation time: 0.00465393 s
+maximal impact parameter: 230.611 Ang
+*********************************************************
+Linked-cell: 
+Numbers of cells: 53391
+Nx: 37 Ny: 37 Nz: 39
+Filled cells: 7300
+Empty cells: 46091
+Average atoms per cell: 102.986
+Maximum atoms per cell: 200
+Minimum atoms per cell: 1
+Simulation box: 
+lx: 444.37 Ang
+ly: 444.37 Ang
+lz: 468.39 Ang
+linked-cell calculation time: 0.133196 s
+time info: 0.0172899 s
+*********************************************************
+Trajectory calculations 
+*********************************************************
+out target time: 223.345 s
+Ntraj: 10000
+Nfree: 565
+Nscatter: 9432
+Nlost: 3
+omega: 114411
+Ntraj: 10000
+Nfree: 496
+Nscatter: 9502
+Nlost: 2
+omega: 114891
+Ntraj: 10000
+Nfree: 538
+Nscatter: 9456
+Nlost: 6
+omega: 115981
+Ntraj: 10000
+Nfree: 536
+Nscatter: 9462
+Nlost: 2
+omega: 114574
+Ntraj: 10000
+Nfree: 580
+Nscatter: 9415
+Nlost: 5
+omega: 116661
+Ntraj: 10000
+Nfree: 538
+Nscatter: 9460
+Nlost: 2
+omega: 116174
+Ntraj: 10000
+Nfree: 525
+Nscatter: 9475
+Nlost: 0
+omega: 114064
+Ntraj: 10000
+Nfree: 568
+Nscatter: 9430
+Nlost: 2
+omega: 113326
+Ntraj: 10000
+Nfree: 535
+Nscatter: 9465
+Nlost: 0
+omega: 114425
+Ntraj: 10000
+Nfree: 518
+Nscatter: 9481
+Nlost: 1
+omega: 117691
+*********************************************************
+task: 0
+worker id: 1437
+time create lcl and mol: 0.025954 s
+numbers of trajectories: 5556
+time trajectory calculation: 47.0403 s
+task: 1
+worker id: 1817
+time create lcl and mol: 0.0254531 s
+numbers of trajectories: 5556
+time trajectory calculation: 101.006 s
+task: 2
+worker id: 1026
+time create lcl and mol: 0.0253172 s
+numbers of trajectories: 5556
+time trajectory calculation: 39.6392 s
+task: 3
+worker id: 612
+time create lcl and mol: 0.0252681 s
+numbers of trajectories: 5556
+time trajectory calculation: 78.572 s
+task: 4
+worker id: 97695
+time create lcl and mol: 0.02545 s
+numbers of trajectories: 5556
+time trajectory calculation: 112.507 s
+task: 5
+worker id: 1304
+time create lcl and mol: 0.026722 s
+numbers of trajectories: 5556
+time trajectory calculation: 34.1584 s
+task: 6
+worker id: 12451
+time create lcl and mol: 0.0256178 s
+numbers of trajectories: 5556
+time trajectory calculation: 48.3824 s
+task: 7
+worker id: 1066
+time create lcl and mol: 0.0254831 s
+numbers of trajectories: 5556
+time trajectory calculation: 124.086 s
+task: 8
+worker id: 1817
+time create lcl and mol: 0.0260279 s
+numbers of trajectories: 5556
+time trajectory calculation: 118.616 s
+task: 9
+worker id: 612
+time create lcl and mol: 0.0272372 s
+numbers of trajectories: 5556
+time trajectory calculation: 94.0737 s
+task: 10
+worker id: 1437
+time create lcl and mol: 0.025327 s
+numbers of trajectories: 5555
+time trajectory calculation: 31.7761 s
+task: 11
+worker id: 1304
+time create lcl and mol: 0.0258698 s
+numbers of trajectories: 5555
+time trajectory calculation: 59.5679 s
+task: 12
+worker id: 1304
+time create lcl and mol: 0.0275459 s
+numbers of trajectories: 5555
+time trajectory calculation: 68.7339 s
+task: 13
+worker id: 12451
+time create lcl and mol: 0.0261562 s
+numbers of trajectories: 5555
+time trajectory calculation: 71.0816 s
+task: 14
+worker id: 1026
+time create lcl and mol: 0.0254571 s
+numbers of trajectories: 5555
+time trajectory calculation: 124.716 s
+task: 15
+worker id: 612
+time create lcl and mol: 0.0266731 s
+numbers of trajectories: 5555
+time trajectory calculation: 33.0081 s
+task: 16
+worker id: 1437
+time create lcl and mol: 0.025727 s
+numbers of trajectories: 5555
+time trajectory calculation: 39.496 s
+task: 17
+worker id: 97695
+time create lcl and mol: 0.0258789 s
+numbers of trajectories: 5555
+time trajectory calculation: 110.677 s
+CCS time: 223.372 s
+*********************************************************
+average value of CCS = 115220 Ang^2
+error value of CCS = 405.06 Ang^2
+Total time: 226.64 s
+Program finished...
+*********************************************************
+INPUT:: Simulation Parameters 
+*********************************************************
+target filename                  : 7w17.xyz
+number of probe                  : 10000
+number of iterarions             : 10
+number of tasks                  : 18
+number of threads                : 24
+seed number                      : 2104
+gas buffer                       : N2
+Target Temperature (K)           : 298
+timestep (fs)                    : 10
+Skin cell size (Ang)             : 0.01
+Equipotential                    : no
+Cut short-range interaction      : yes
+LJ cutoff (Ang)                  : 12
+Apply long-range interaction     : yes
+Cut long-range interaction       : yes
+Coulomb cutoff (Ang)             : 25
+Apply induced-dipole interaction : yes
+alpha (Ang^3)                    : 1.71
+force_type: 6
+*********************************************************
+Force Field parameters: 
+*********************************************************
+Symbol  mass (amu)  epislon (kcal/mol)  sigma(Angstroms) 
+C   12.011   0.0824736   3.2255
+N   14.007   0.0758527   3.5719
+H   1.008   0.0362711   1.8986
+O   15.999   0.062323   3.075
+S   32.06   0.138032   3.4237
+P   30.9738   0.145372   3.47
+*********************************************************
+MOLECULE:: orientation around the inertia principal axis 
+*********************************************************
+Inertia matrix a.u. Ang^2: 
+{  6.63676e+10  1377.42  -497.502  }
+{  1377.42  6.63676e+10  1063.62  }
+{  -497.502  1063.62  6.63676e+10  }
+Rotation matrix applied to molecule: 
+{  0.999999  0.00114971  -0.000416152  }
+{  -0.00230802  0.999996  -0.00177314  }
+{  0.000414111  0.0017741  0.999998  }
+Molecule radius: 171.043 Ang 
+orientation time of molecule target: 0.857 s
+target mass: 5.43303e+06 amu
+gas mass: 28.014 amu
+reduce mass: 28.014 amu
+charge state: -300 e
+*********************************************************
+Geometric Ellipsoid: 
+*********************************************************
+maximal distances: 162.188  160.956  171.043  Ang
+Initial axis length: 213.295  212.063  222.151  Ang
+Ellipsoid axis length: 221.755  220.523  230.611  Ang
+ellipsoid calculation time: 0.00486183 s
+maximal impact parameter: 230.611 Ang
+*********************************************************
+Linked-cell: 
+Numbers of cells: 53391
+Nx: 37 Ny: 37 Nz: 39
+Filled cells: 7300
+Empty cells: 46091
+Average atoms per cell: 102.986
+Maximum atoms per cell: 200
+Minimum atoms per cell: 1
+Simulation box: 
+lx: 444.37 Ang
+ly: 444.37 Ang
+lz: 468.39 Ang
+linked-cell calculation time: 0.139311 s
+time info: 0.0179598 s
+*********************************************************
+Trajectory calculations 
+*********************************************************
+out target time: 207.626 s
+Ntraj: 10000
+Nfree: 565
+Nscatter: 9432
+Nlost: 3
+omega: 114411
+Ntraj: 10000
+Nfree: 496
+Nscatter: 9502
+Nlost: 2
+omega: 114891
+Ntraj: 10000
+Nfree: 538
+Nscatter: 9456
+Nlost: 6
+omega: 115981
+Ntraj: 10000
+Nfree: 536
+Nscatter: 9462
+Nlost: 2
+omega: 114574
+Ntraj: 10000
+Nfree: 580
+Nscatter: 9415
+Nlost: 5
+omega: 116661
+Ntraj: 10000
+Nfree: 538
+Nscatter: 9460
+Nlost: 2
+omega: 116174
+Ntraj: 10000
+Nfree: 525
+Nscatter: 9475
+Nlost: 0
+omega: 114064
+Ntraj: 10000
+Nfree: 568
+Nscatter: 9430
+Nlost: 2
+omega: 113326
+Ntraj: 10000
+Nfree: 535
+Nscatter: 9465
+Nlost: 0
+omega: 114425
+Ntraj: 10000
+Nfree: 518
+Nscatter: 9481
+Nlost: 1
+omega: 117691
+*********************************************************
+task: 0
+worker id: 9035
+time create lcl and mol: 0.0266888 s
+numbers of trajectories: 5556
+time trajectory calculation: 46.8511 s
+task: 1
+worker id: 7571
+time create lcl and mol: 0.0261059 s
+numbers of trajectories: 5556
+time trajectory calculation: 102.484 s
+task: 2
+worker id: 7571
+time create lcl and mol: 0.0256081 s
+numbers of trajectories: 5556
+time trajectory calculation: 39.6431 s
+task: 3
+worker id: 8665
+time create lcl and mol: 0.0259578 s
+numbers of trajectories: 5556
+time trajectory calculation: 78.1811 s
+task: 4
+worker id: 19883
+time create lcl and mol: 0.0256729 s
+numbers of trajectories: 5556
+time trajectory calculation: 113.186 s
+task: 5
+worker id: 8632
+time create lcl and mol: 0.027458 s
+numbers of trajectories: 5556
+time trajectory calculation: 35.1626 s
+task: 6
+worker id: 9390
+time create lcl and mol: 0.026593 s
+numbers of trajectories: 5556
+time trajectory calculation: 48.1029 s
+task: 7
+worker id: 9390
+time create lcl and mol: 0.0261359 s
+numbers of trajectories: 5556
+time trajectory calculation: 125.939 s
+task: 8
+worker id: 9035
+time create lcl and mol: 0.025507 s
+numbers of trajectories: 5556
+time trajectory calculation: 117.233 s
+task: 9
+worker id: 19883
+time create lcl and mol: 0.0262759 s
+numbers of trajectories: 5556
+time trajectory calculation: 94.2834 s
+task: 10
+worker id: 8632
+time create lcl and mol: 0.026679 s
+numbers of trajectories: 5555
+time trajectory calculation: 32.11 s
+task: 11
+worker id: 7571
+time create lcl and mol: 0.025665 s
+numbers of trajectories: 5555
+time trajectory calculation: 58.8623 s
+task: 12
+worker id: 8264
+time create lcl and mol: 0.0253081 s
+numbers of trajectories: 5555
+time trajectory calculation: 68.4162 s
+task: 13
+worker id: 8632
+time create lcl and mol: 0.026763 s
+numbers of trajectories: 5555
+time trajectory calculation: 71.0928 s
+task: 14
+worker id: 8909
+time create lcl and mol: 0.0258701 s
+numbers of trajectories: 5555
+time trajectory calculation: 120.617 s
+task: 15
+worker id: 8632
+time create lcl and mol: 0.0268972 s
+numbers of trajectories: 5555
+time trajectory calculation: 32.7967 s
+task: 16
+worker id: 8665
+time create lcl and mol: 0.0245471 s
+numbers of trajectories: 5555
+time trajectory calculation: 39.4062 s
+task: 17
+worker id: 8264
+time create lcl and mol: 0.0266159 s
+numbers of trajectories: 5555
+time trajectory calculation: 110.193 s
+CCS time: 207.654 s
+*********************************************************
+average value of CCS = 115220 Ang^2
+error value of CCS = 405.06 Ang^2
+Total time: 208.674 s
+Program finished...
+*********************************************************
+INPUT:: Simulation Parameters 
+*********************************************************
+target filename                  : 7w17.xyz
+number of probe                  : 10000
+number of iterarions             : 10
+number of tasks                  : 18
+number of threads                : 24
+seed number                      : 2104
+gas buffer                       : N2
+Target Temperature (K)           : 298
+timestep (fs)                    : 10
+Skin cell size (Ang)             : 0.01
+Equipotential                    : no
+Cut short-range interaction      : yes
+LJ cutoff (Ang)                  : 12
+Apply long-range interaction     : yes
+Cut long-range interaction       : yes
+Coulomb cutoff (Ang)             : 25
+Apply induced-dipole interaction : yes
+alpha (Ang^3)                    : 1.71
+force_type: 6
+*********************************************************
+Force Field parameters: 
+*********************************************************
+Symbol  mass (amu)  epislon (kcal/mol)  sigma(Angstroms) 
+C   12.011   0.0824736   3.2255
+N   14.007   0.0758527   3.5719
+H   1.008   0.0362711   1.8986
+O   15.999   0.062323   3.075
+S   32.06   0.138032   3.4237
+P   30.9738   0.145372   3.47
+*********************************************************
+MOLECULE:: orientation around the inertia principal axis 
+*********************************************************
+Inertia matrix a.u. Ang^2: 
+{  6.63676e+10  1377.42  -497.502  }
+{  1377.42  6.63676e+10  1063.62  }
+{  -497.502  1063.62  6.63676e+10  }
+Rotation matrix applied to molecule: 
+{  0.999999  0.00114971  -0.000416152  }
+{  -0.00230802  0.999996  -0.00177314  }
+{  0.000414111  0.0017741  0.999998  }
+Molecule radius: 171.043 Ang 
+orientation time of molecule target: 0.802325 s
+target mass: 5.43303e+06 amu
+gas mass: 28.014 amu
+reduce mass: 28.014 amu
+charge state: -300 e
+*********************************************************
+Geometric Ellipsoid: 
+*********************************************************
+maximal distances: 162.188  160.956  171.043  Ang
+Initial axis length: 213.295  212.063  222.151  Ang
+Ellipsoid axis length: 221.755  220.523  230.611  Ang
+ellipsoid calculation time: 0.00465298 s
+maximal impact parameter: 230.611 Ang
+*********************************************************
+Linked-cell: 
+Numbers of cells: 53391
+Nx: 37 Ny: 37 Nz: 39
+Filled cells: 7300
+Empty cells: 46091
+Average atoms per cell: 102.986
+Maximum atoms per cell: 200
+Minimum atoms per cell: 1
+Simulation box: 
+lx: 444.37 Ang
+ly: 444.37 Ang
+lz: 468.39 Ang
+linked-cell calculation time: 0.132572 s
+time info: 0.0175741 s
+*********************************************************
+Trajectory calculations 
+*********************************************************
+out target time: 238.648 s
+Ntraj: 10000
+Nfree: 565
+Nscatter: 9432
+Nlost: 3
+omega: 114411
+Ntraj: 10000
+Nfree: 496
+Nscatter: 9502
+Nlost: 2
+omega: 114891
+Ntraj: 10000
+Nfree: 538
+Nscatter: 9456
+Nlost: 6
+omega: 115981
+Ntraj: 10000
+Nfree: 536
+Nscatter: 9462
+Nlost: 2
+omega: 114574
+Ntraj: 10000
+Nfree: 580
+Nscatter: 9415
+Nlost: 5
+omega: 116661
+Ntraj: 10000
+Nfree: 538
+Nscatter: 9460
+Nlost: 2
+omega: 116174
+Ntraj: 10000
+Nfree: 525
+Nscatter: 9475
+Nlost: 0
+omega: 114064
+Ntraj: 10000
+Nfree: 568
+Nscatter: 9430
+Nlost: 2
+omega: 113326
+Ntraj: 10000
+Nfree: 535
+Nscatter: 9465
+Nlost: 0
+omega: 114425
+Ntraj: 10000
+Nfree: 518
+Nscatter: 9481
+Nlost: 1
+omega: 117691
+*********************************************************
+task: 0
+worker id: 15386
+time create lcl and mol: 0.0258241 s
+numbers of trajectories: 5556
+time trajectory calculation: 48.3521 s
+task: 1
+worker id: 15386
+time create lcl and mol: 0.0254481 s
+numbers of trajectories: 5556
+time trajectory calculation: 100.759 s
+task: 2
+worker id: 15118
+time create lcl and mol: 0.0262299 s
+numbers of trajectories: 5556
+time trajectory calculation: 39.6238 s
+task: 3
+worker id: 15873
+time create lcl and mol: 0.0258799 s
+numbers of trajectories: 5556
+time trajectory calculation: 77.1903 s
+task: 4
+worker id: 26375
+time create lcl and mol: 0.0252929 s
+numbers of trajectories: 5556
+time trajectory calculation: 113.764 s
+task: 5
+worker id: 15118
+time create lcl and mol: 0.0262802 s
+numbers of trajectories: 5556
+time trajectory calculation: 35.0797 s
+task: 6
+worker id: 14745
+time create lcl and mol: 0.0259042 s
+numbers of trajectories: 5556
+time trajectory calculation: 47.5604 s
+task: 7
+worker id: 14053
+time create lcl and mol: 0.0261772 s
+numbers of trajectories: 5556
+time trajectory calculation: 124.143 s
+task: 8
+worker id: 15515
+time create lcl and mol: 0.025146 s
+numbers of trajectories: 5556
+time trajectory calculation: 113.674 s
+task: 9
+worker id: 15138
+time create lcl and mol: 0.0248961 s
+numbers of trajectories: 5556
+time trajectory calculation: 91.716 s
+task: 10
+worker id: 15873
+time create lcl and mol: 0.0256069 s
+numbers of trajectories: 5555
+time trajectory calculation: 32.1308 s
+task: 11
+worker id: 15873
+time create lcl and mol: 0.026916 s
+numbers of trajectories: 5555
+time trajectory calculation: 59.5251 s
+task: 12
+worker id: 15138
+time create lcl and mol: 0.025501 s
+numbers of trajectories: 5555
+time trajectory calculation: 67.7182 s
+task: 13
+worker id: 14745
+time create lcl and mol: 0.02546 s
+numbers of trajectories: 5555
+time trajectory calculation: 72.032 s
+task: 14
+worker id: 15515
+time create lcl and mol: 0.0251491 s
+numbers of trajectories: 5555
+time trajectory calculation: 124.817 s
+task: 15
+worker id: 14745
+time create lcl and mol: 0.0264862 s
+numbers of trajectories: 5555
+time trajectory calculation: 33.4511 s
+task: 16
+worker id: 15118
+time create lcl and mol: 0.0265319 s
+numbers of trajectories: 5555
+time trajectory calculation: 39.3955 s
+task: 17
+worker id: 26375
+time create lcl and mol: 0.0274172 s
+numbers of trajectories: 5555
+time trajectory calculation: 111.288 s
+CCS time: 238.676 s
+*********************************************************
+average value of CCS = 115220 Ang^2
+error value of CCS = 405.06 Ang^2
+Total time: 239.621 s
+Program finished...
+*********************************************************
+INPUT:: Simulation Parameters 
+*********************************************************
+target filename                  : 7w17.xyz
+number of probe                  : 10000
+number of iterarions             : 10
+number of tasks                  : 18
+number of threads                : 24
+seed number                      : 2104
+gas buffer                       : N2
+Target Temperature (K)           : 298
+timestep (fs)                    : 10
+Skin cell size (Ang)             : 0.01
+Equipotential                    : no
+Cut short-range interaction      : yes
+LJ cutoff (Ang)                  : 12
+Apply long-range interaction     : yes
+Cut long-range interaction       : yes
+Coulomb cutoff (Ang)             : 25
+Apply induced-dipole interaction : yes
+alpha (Ang^3)                    : 1.71
+force_type: 6
+*********************************************************
+Force Field parameters: 
+*********************************************************
+Symbol  mass (amu)  epislon (kcal/mol)  sigma(Angstroms) 
+C   12.011   0.0824736   3.2255
+N   14.007   0.0758527   3.5719
+H   1.008   0.0362711   1.8986
+O   15.999   0.062323   3.075
+S   32.06   0.138032   3.4237
+P   30.9738   0.145372   3.47
+*********************************************************
+MOLECULE:: orientation around the inertia principal axis 
+*********************************************************
+Inertia matrix a.u. Ang^2: 
+{  6.63676e+10  1377.42  -497.502  }
+{  1377.42  6.63676e+10  1063.62  }
+{  -497.502  1063.62  6.63676e+10  }
+Rotation matrix applied to molecule: 
+{  0.999999  0.00114971  -0.000416152  }
+{  -0.00230802  0.999996  -0.00177314  }
+{  0.000414111  0.0017741  0.999998  }
+Molecule radius: 171.043 Ang 
+orientation time of molecule target: 0.803824 s
+target mass: 5.43303e+06 amu
+gas mass: 28.014 amu
+reduce mass: 28.014 amu
+charge state: -300 e
+*********************************************************
+Geometric Ellipsoid: 
+*********************************************************
+maximal distances: 162.188  160.956  171.043  Ang
+Initial axis length: 213.295  212.063  222.151  Ang
+Ellipsoid axis length: 221.755  220.523  230.611  Ang
+ellipsoid calculation time: 0.00465012 s
+maximal impact parameter: 230.611 Ang
+*********************************************************
+Linked-cell: 
+Numbers of cells: 53391
+Nx: 37 Ny: 37 Nz: 39
+Filled cells: 7300
+Empty cells: 46091
+Average atoms per cell: 102.986
+Maximum atoms per cell: 200
+Minimum atoms per cell: 1
+Simulation box: 
+lx: 444.37 Ang
+ly: 444.37 Ang
+lz: 468.39 Ang
+linked-cell calculation time: 0.134005 s
+time info: 0.017205 s
+*********************************************************
+Trajectory calculations 
+*********************************************************
+out target time: 231.991 s
+Ntraj: 10000
+Nfree: 565
+Nscatter: 9432
+Nlost: 3
+omega: 114411
+Ntraj: 10000
+Nfree: 496
+Nscatter: 9502
+Nlost: 2
+omega: 114891
+Ntraj: 10000
+Nfree: 538
+Nscatter: 9456
+Nlost: 6
+omega: 115981
+Ntraj: 10000
+Nfree: 536
+Nscatter: 9462
+Nlost: 2
+omega: 114574
+Ntraj: 10000
+Nfree: 580
+Nscatter: 9415
+Nlost: 5
+omega: 116661
+Ntraj: 10000
+Nfree: 538
+Nscatter: 9460
+Nlost: 2
+omega: 116174
+Ntraj: 10000
+Nfree: 525
+Nscatter: 9475
+Nlost: 0
+omega: 114064
+Ntraj: 10000
+Nfree: 568
+Nscatter: 9430
+Nlost: 2
+omega: 113326
+Ntraj: 10000
+Nfree: 535
+Nscatter: 9465
+Nlost: 0
+omega: 114425
+Ntraj: 10000
+Nfree: 518
+Nscatter: 9481
+Nlost: 1
+omega: 117691
+*********************************************************
+task: 0
+worker id: 22729
+time create lcl and mol: 0.0264051 s
+numbers of trajectories: 5556
+time trajectory calculation: 47.5353 s
+task: 1
+worker id: 23103
+time create lcl and mol: 0.025887 s
+numbers of trajectories: 5556
+time trajectory calculation: 101.913 s
+task: 2
+worker id: 34377
+time create lcl and mol: 0.0263472 s
+numbers of trajectories: 5556
+time trajectory calculation: 40.6061 s
+task: 3
+worker id: 22033
+time create lcl and mol: 0.0255401 s
+numbers of trajectories: 5556
+time trajectory calculation: 78.0467 s
+task: 4
+worker id: 23373
+time create lcl and mol: 0.025929 s
+numbers of trajectories: 5556
+time trajectory calculation: 112.903 s
+task: 5
+worker id: 23501
+time create lcl and mol: 0.0253301 s
+numbers of trajectories: 5556
+time trajectory calculation: 34.919 s
+task: 6
+worker id: 23856
+time create lcl and mol: 0.025558 s
+numbers of trajectories: 5556
+time trajectory calculation: 48.2987 s
+task: 7
+worker id: 23129
+time create lcl and mol: 0.0251682 s
+numbers of trajectories: 5556
+time trajectory calculation: 123.566 s
+task: 8
+worker id: 23103
+time create lcl and mol: 0.0269589 s
+numbers of trajectories: 5556
+time trajectory calculation: 116.442 s
+task: 9
+worker id: 23501
+time create lcl and mol: 0.0265391 s
+numbers of trajectories: 5556
+time trajectory calculation: 94.5977 s
+task: 10
+worker id: 22729
+time create lcl and mol: 0.0255458 s
+numbers of trajectories: 5555
+time trajectory calculation: 31.8089 s
+task: 11
+worker id: 23856
+time create lcl and mol: 0.02545 s
+numbers of trajectories: 5555
+time trajectory calculation: 59.1201 s
+task: 12
+worker id: 23373
+time create lcl and mol: 0.025404 s
+numbers of trajectories: 5555
+time trajectory calculation: 68.9262 s
+task: 13
+worker id: 22033
+time create lcl and mol: 0.0249739 s
+numbers of trajectories: 5555
+time trajectory calculation: 70.7882 s
+task: 14
+worker id: 23856
+time create lcl and mol: 0.027123 s
+numbers of trajectories: 5555
+time trajectory calculation: 124.358 s
+task: 15
+worker id: 23501
+time create lcl and mol: 0.0273139 s
+numbers of trajectories: 5555
+time trajectory calculation: 33.3834 s
+task: 16
+worker id: 22729
+time create lcl and mol: 0.0273449 s
+numbers of trajectories: 5555
+time trajectory calculation: 38.918 s
+task: 17
+worker id: 34377
+time create lcl and mol: 0.026087 s
+numbers of trajectories: 5555
+time trajectory calculation: 109.784 s
+CCS time: 232.018 s
+*********************************************************
+average value of CCS = 115220 Ang^2
+error value of CCS = 405.06 Ang^2
+Total time: 232.965 s
+Program finished...
+*********************************************************
+INPUT:: Simulation Parameters 
+*********************************************************
+target filename                  : 7w17.xyz
+number of probe                  : 10000
+number of iterarions             : 10
+number of tasks                  : 18
+number of threads                : 24
+seed number                      : 2104
+gas buffer                       : N2
+Target Temperature (K)           : 298
+timestep (fs)                    : 10
+Skin cell size (Ang)             : 0.01
+Equipotential                    : no
+Cut short-range interaction      : yes
+LJ cutoff (Ang)                  : 12
+Apply long-range interaction     : yes
+Cut long-range interaction       : yes
+Coulomb cutoff (Ang)             : 25
+Apply induced-dipole interaction : yes
+alpha (Ang^3)                    : 1.71
+force_type: 6
+*********************************************************
+Force Field parameters: 
+*********************************************************
+Symbol  mass (amu)  epislon (kcal/mol)  sigma(Angstroms) 
+C   12.011   0.0824736   3.2255
+N   14.007   0.0758527   3.5719
+H   1.008   0.0362711   1.8986
+O   15.999   0.062323   3.075
+S   32.06   0.138032   3.4237
+P   30.9738   0.145372   3.47
+*********************************************************
+MOLECULE:: orientation around the inertia principal axis 
+*********************************************************
+Inertia matrix a.u. Ang^2: 
+{  6.63676e+10  1377.42  -497.502  }
+{  1377.42  6.63676e+10  1063.62  }
+{  -497.502  1063.62  6.63676e+10  }
+Rotation matrix applied to molecule: 
+{  0.999999  0.00114971  -0.000416152  }
+{  -0.00230802  0.999996  -0.00177314  }
+{  0.000414111  0.0017741  0.999998  }
+Molecule radius: 171.043 Ang 
+orientation time of molecule target: 0.799374 s
+target mass: 5.43303e+06 amu
+gas mass: 28.014 amu
+reduce mass: 28.014 amu
+charge state: -300 e
+*********************************************************
+Geometric Ellipsoid: 
+*********************************************************
+maximal distances: 162.188  160.956  171.043  Ang
+Initial axis length: 213.295  212.063  222.151  Ang
+Ellipsoid axis length: 221.755  220.523  230.611  Ang
+ellipsoid calculation time: 0.00465298 s
+maximal impact parameter: 230.611 Ang
+*********************************************************
+Linked-cell: 
+Numbers of cells: 53391
+Nx: 37 Ny: 37 Nz: 39
+Filled cells: 7300
+Empty cells: 46091
+Average atoms per cell: 102.986
+Maximum atoms per cell: 200
+Minimum atoms per cell: 1
+Simulation box: 
+lx: 444.37 Ang
+ly: 444.37 Ang
+lz: 468.39 Ang
+linked-cell calculation time: 0.132668 s
+time info: 0.0177622 s
+*********************************************************
+Trajectory calculations 
+*********************************************************
+out target time: 236.535 s
+Ntraj: 10000
+Nfree: 565
+Nscatter: 9432
+Nlost: 3
+omega: 114411
+Ntraj: 10000
+Nfree: 496
+Nscatter: 9502
+Nlost: 2
+omega: 114891
+Ntraj: 10000
+Nfree: 538
+Nscatter: 9456
+Nlost: 6
+omega: 115981
+Ntraj: 10000
+Nfree: 536
+Nscatter: 9462
+Nlost: 2
+omega: 114574
+Ntraj: 10000
+Nfree: 580
+Nscatter: 9415
+Nlost: 5
+omega: 116661
+Ntraj: 10000
+Nfree: 538
+Nscatter: 9460
+Nlost: 2
+omega: 116174
+Ntraj: 10000
+Nfree: 525
+Nscatter: 9475
+Nlost: 0
+omega: 114064
+Ntraj: 10000
+Nfree: 568
+Nscatter: 9430
+Nlost: 2
+omega: 113326
+Ntraj: 10000
+Nfree: 535
+Nscatter: 9465
+Nlost: 0
+omega: 114425
+Ntraj: 10000
+Nfree: 518
+Nscatter: 9481
+Nlost: 1
+omega: 117691
+*********************************************************
+task: 0
+worker id: 41817
+time create lcl and mol: 0.0253639 s
+numbers of trajectories: 5556
+time trajectory calculation: 47.0745 s
+task: 1
+worker id: 30530
+time create lcl and mol: 0.0250342 s
+numbers of trajectories: 5556
+time trajectory calculation: 102.564 s
+task: 2
+worker id: 29460
+time create lcl and mol: 0.0257158 s
+numbers of trajectories: 5556
+time trajectory calculation: 39.9268 s
+task: 3
+worker id: 30928
+time create lcl and mol: 0.0254529 s
+numbers of trajectories: 5556
+time trajectory calculation: 78.1686 s
+task: 4
+worker id: 30530
+time create lcl and mol: 0.025435 s
+numbers of trajectories: 5556
+time trajectory calculation: 112.144 s
+task: 5
+worker id: 30807
+time create lcl and mol: 0.0261559 s
+numbers of trajectories: 5556
+time trajectory calculation: 35.116 s
+task: 6
+worker id: 30807
+time create lcl and mol: 0.0256732 s
+numbers of trajectories: 5556
+time trajectory calculation: 48.8256 s
+task: 7
+worker id: 30158
+time create lcl and mol: 0.0268729 s
+numbers of trajectories: 5556
+time trajectory calculation: 121.345 s
+task: 8
+worker id: 31289
+time create lcl and mol: 0.0257251 s
+numbers of trajectories: 5556
+time trajectory calculation: 112.857 s
+task: 9
+worker id: 30549
+time create lcl and mol: 0.025552 s
+numbers of trajectories: 5556
+time trajectory calculation: 94.084 s
+task: 10
+worker id: 30549
+time create lcl and mol: 0.025974 s
+numbers of trajectories: 5555
+time trajectory calculation: 30.9942 s
+task: 11
+worker id: 41817
+time create lcl and mol: 0.0264089 s
+numbers of trajectories: 5555
+time trajectory calculation: 59.1402 s
+task: 12
+worker id: 30807
+time create lcl and mol: 0.024822 s
+numbers of trajectories: 5555
+time trajectory calculation: 67.6067 s
+task: 13
+worker id: 30928
+time create lcl and mol: 0.0264361 s
+numbers of trajectories: 5555
+time trajectory calculation: 69.9589 s
+task: 14
+worker id: 31289
+time create lcl and mol: 0.0252581 s
+numbers of trajectories: 5555
+time trajectory calculation: 123.497 s
+task: 15
+worker id: 41817
+time create lcl and mol: 0.026602 s
+numbers of trajectories: 5555
+time trajectory calculation: 33.4771 s
+task: 16
+worker id: 30928
+time create lcl and mol: 0.0263162 s
+numbers of trajectories: 5555
+time trajectory calculation: 40.0261 s
+task: 17
+worker id: 29460
+time create lcl and mol: 0.0257502 s
+numbers of trajectories: 5555
+time trajectory calculation: 111.268 s
+CCS time: 236.563 s
+*********************************************************
+average value of CCS = 115220 Ang^2
+error value of CCS = 405.06 Ang^2
+Total time: 237.505 s
+Program finished...

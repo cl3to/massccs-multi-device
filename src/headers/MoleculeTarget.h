@@ -1,21 +1,23 @@
 /*
  * This program is licensed granted by STATE UNIVERSITY OF CAMPINAS - UNICAMP ("University")
- * for use of massccs-ompc software ("the Software") through this website
- * https://github.com/cces-cepid/massccs-ompc (the "Website").
+ * for use of MassCCS software ("the Software") through this website
+ * https://github.com/cces-cepid/MassCCS (the "Website").
  *
  * By downloading the Software through the Website, you (the "License") are confirming that you agree
  * that your use of the Software is subject to the academic license terms.
  *
- * For more information about massccs-ompc please contact: 
+ * For more information about MassCCS please contact: 
  * skaf@unicamp.br (Munir S. Skaf)
  * guido@unicamp.br (Guido Araujo)
  * samuelcm@unicamp.br (Samuel Cajahuaringa)
+ * danielzc@unicamp.br (Daniel L. Z. Caetano)
  * zanottol@unicamp.br (Leandro N. Zanotto)
  */
 
-#ifndef MASSCCS_OMPC_V1_MOLECULETARGET_H
-#define MASSCCS_OMPC_V1_MOLECULETARGET_H
+#ifndef MASSCCS_V1_MOLECULETARGET_H
+#define MASSCCS_V1_MOLECULETARGET_H
 
+//#include "MoleculeTarget.h"
 #include "GasBuffer.h"
 #include <cmath>
 #include <vector>
@@ -43,6 +45,8 @@ private:
   void readPQRfile(string &filename);
   void readUserFF(string &user_ff);
   void defaultFF();
+  //void readXYZfile(string &filename);
+  //void readPQRfile(string &filename);
   void calculateCenterOfMass(double(&)[3]);
   void moveToCenterOfMass(double[3]);
   void calculateMoleculeRadius();
@@ -54,6 +58,7 @@ private:
   double inertia[3][3];
   double inertiaValues[3];
   double inertiaVectors[3][3];
+  //vector<double> defaultparameters(string chemical, unsigned int gas_buffer_flag);
   vector<double> assignedParameter(string chemical);
   void printFF();
   void print();
@@ -62,8 +67,10 @@ private:
   double *user_m;
   double *user_eps;
   double *user_sig;
+  //void print();
 
 public:
+  //MoleculeTarget(string &filename, unsigned int gas_buffer_flag);
   MoleculeTarget(string &filename, unsigned int gas_buffer_flag, string &user_ff, unsigned int user_ff_flag);
 
   unsigned int natoms;
@@ -84,5 +91,5 @@ public:
   double maxX, maxY, maxZ;
 };
 
-#endif 
+#endif // MASSCCS_V1_MOLECULETARGET_H
 

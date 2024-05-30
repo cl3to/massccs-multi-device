@@ -1,20 +1,22 @@
 /*
  * This program is licensed granted by STATE UNIVERSITY OF CAMPINAS - UNICAMP ("University")
- * for use of massccs-ompc software ("the Software") through this website
- * https://github.com/cces-cepid/massccs-ompc (the "Website").
+ * for use of MassCCS software ("the Software") through this website
+ * https://github.com/cces-cepid/MassCCS (the "Website").
  *
  * By downloading the Software through the Website, you (the "License") are confirming that you agree
  * that your use of the Software is subject to the academic license terms.
  *
- * For more information about massccs-ompc please contact: 
+ * For more information about MassCCS please contact: 
  * skaf@unicamp.br (Munir S. Skaf)
  * guido@unicamp.br (Guido Araujo)
  * samuelcm@unicamp.br (Samuel Cajahuaringa)
+ * danielzc@unicamp.br (Daniel L. Z. Caetano)
  * zanottol@unicamp.br (Leandro N. Zanotto)
  */
 
 #include "headers/Equipotential.h"
 
+//Equipotential::Equipotential(MoleculeTarget *moleculeTarget, GasBuffer *gas, unsigned int polarizability_flag, double temperature, double mu, double alpha) {
 Equipotential::Equipotential(MoleculeTarget *moleculeTarget, GasBuffer *gas, unsigned int polarizability_flag, double temperature, double mu, double alpha, unsigned int gas_buffer_flag) {
 this->moleculeTarget = moleculeTarget;
 this->gas = gas;
@@ -46,6 +48,7 @@ print();
 }
 
 Equipotential::~Equipotential() {
+  //cout << "equipotential destroyed" << endl;
 }
 
 /* this routine is adapted from the CoSIMS software

@@ -6,10 +6,13 @@ This extension speedup even more the CCS calculations allowing expensive CCS cal
 
 If you use MassCCS-OMPC in your research please, cite the following papers:
 
-["S. Cajahuaringa, L. N. Zanotto,S. Rigo, H. Yviquel, M. S. Skaf and G. Araujo, Ion-Molecule Collision Cross-Section Calculations Using Trajectory Parallelization in Distributed Systems, submitted"]()
+["S. Cajahuaringa, L. N. Zanotto,S. Rigo, H. Yviquel, M. S. Skaf and G. Araujo, Ion-Molecule Collision Cross-Section Calculations Using Trajectory Parallelization in Distributed Systems, J.
+Parallel Distr. Com. 191 (2024) 104902"](https://doi.org/10.1016/j.jpdc.2024.104902)
 
-### The repository contents:
-[`src`](src): This directory contains source codes.
+## The repository contents:
+[`src`](src): This directory contains massccs source codes.
+
+[`paper`](paper): This directory contains inputs, scripts and outputs of published paper.
 
 ## Installation 
 
@@ -62,6 +65,8 @@ cd .. # need to execute massccs from root dir
 mpirun -np 3 singularity exec runtime_latest.sif ./build/bin/massccs-ompc input_Nitrogen.json > N2_04_1ubq_charge_4e_min.log
 ```
 where the input file input_Nitrogen.json define 4 tasks for 2 workes nodes available, that is a dynamics task schedule.
+
+
 
 
 Author & Contact:

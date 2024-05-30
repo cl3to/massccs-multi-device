@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(massccs-ompc
-    VERSION         1.0
+project(massccs
+    VERSION         2.0
     DESCRIPTION     "massccs ompc version"
     LANGUAGES       C CXX)
 
