@@ -18,6 +18,26 @@
 #include <cstdio>
 #include <unistd.h>
 
+/*
+Structure to manager the pool of target devices available in the env
+This structure provide a function to get the next device available
+for use in a omp target task.
+*/
+struct device_pool_t {
+  int num_devices;
+  int current_device;
+  int device_stride;
+
+  device_pool_t():
+    num_devices(omp_get_num_devices()), current_device(-4), device_stride(4) {}
+
+  int next() {
+    current_device = (current_device + device_stride) % num_devices;
+    return current_device;
+  }
+};
+
+
 System::System(char *inputFilename) {
 
 // read the input
@@ -366,7 +386,8 @@ double time_lcl_mol[ntask];
 double time_traj_task[ntask];
 double worker_id[ntask];
 
-int rr;        
+device_pool_t device_pool;
+
 if (gas_buffer_flag == 1) {
   // Hellium: He - atomic buffer gas
   #pragma omp parallel
@@ -383,7 +404,7 @@ if (gas_buffer_flag == 1) {
       map(to: rnd_vec4[nbegin[i]:nlocal[i]], rnd_vec5[nbegin[i]:nlocal[i]], rnd_vec6[nbegin[i]:nlocal[i]]) \
       map(to: rnd_vec7[nbegin[i]:nlocal[i]], rnd_vec8[nbegin[i]:nlocal[i]], rnd_vec9[nbegin[i]:nlocal[i]]) \
       map(tofrom: dOmega_vec[nbegin[i]:nlocal[i]], Nscatter_vec[nbegin[i]:nlocal[i]], Nlost_vec[nbegin[i]:nlocal[i]], Nfree_vec[nbegin[i]:nlocal[i]]) \
-      depend(in: rr)
+      device(device_pool.next())
       {  
         double i_start = omp_get_wtime();
         worker_id[i] = getpid();
@@ -457,7 +478,7 @@ if (gas_buffer_flag == 1) {
       map(to: rnd_vec4[nbegin[i]:nlocal[i]], rnd_vec5[nbegin[i]:nlocal[i]], rnd_vec6[nbegin[i]:nlocal[i]]) \
       map(to: rnd_vec7[nbegin[i]:nlocal[i]], rnd_vec8[nbegin[i]:nlocal[i]], rnd_vec9[nbegin[i]:nlocal[i]]) \
       map(tofrom: dOmega_vec[nbegin[i]:nlocal[i]], Nscatter_vec[nbegin[i]:nlocal[i]], Nlost_vec[nbegin[i]:nlocal[i]], Nfree_vec[nbegin[i]:nlocal[i]]) \
-      depend(in: rr)
+      device(device_pool.next())
       {
         double i_start = omp_get_wtime();
         worker_id[i] = getpid();
